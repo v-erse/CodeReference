@@ -23,7 +23,13 @@ if ("anything") {
 }
 
 // THE CONDITIONAL (QUESTION MARK) OPERATOR
-// the only ternary operator in JS
-let age = 16;
-let oldEnough =
-    age > 18 ? console.log("old enough") : console.log("not old enough");
+// the only ternary operator in JS.
+// Non-expressions can't be used as operands for this, so no break/continue
+let age = 18;
+console.log(
+    age >= 21
+        ? "old enough to drink and to drive (separately!)"
+        : age >= 16
+        ? "old enough to drive, not old enough to drink"
+        : "not old enough to drink or drive"
+);
