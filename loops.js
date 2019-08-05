@@ -80,8 +80,11 @@ for (let odd = 0; odd < 10; odd++) {
 When you break, you only break out of the current loop. 
 Labels allow us to break out of a specific loop. */
 console.log("labels");
-outer: for (i = 0; i < 3; i++) // outermost loop labeled outer
-{
+outer: for (
+    i = 0;
+    i < 3;
+    i++ // outermost loop labeled outer
+) {
     for (let j = 0; j < 3; j++) {
         console.log(i, j);
         if (i == 1 && j == 2) break outer; // break the outer loop
