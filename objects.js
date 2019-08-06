@@ -94,3 +94,59 @@ console.log(obj);
 let a = {};
 let b = {};
 console.log(a == b); //false
+
+/* OBJECT FUNCTIONS */
+user = {
+    name: "John",
+    age: 30,
+    // Objects can have their own functions like this
+    // 'this' refers to this object, of course
+    sayHi() {
+        console.log(this.name + ": " + "Hi!");
+    }
+};
+
+// In JavaScript 'this' is not bound
+let abbey = { name: "Abbey" };
+let admin = { name: "Admin" };
+
+function sayName() {
+    // this 'this' is not bound, it will adapt to
+    // whatever object it finds itself in
+    console.log(this.name);
+}
+
+abbey.sayName = sayName;
+admin.sayName = sayName;
+
+abbey.sayName(); // this == abbey, so will return 'Abbey'
+admin.sayName(); // this == admin, so will return 'Admin'
+
+/* REFERENCE TYPES */
+let hi = user.sayHi;
+// hi(); this won't work, because there is no 'this'
+
+/* The reason for this is that when you call an object function, it
+doesn't just get called. 
+
+In a function call like:
+user.sayHi()
+
+once JS reads user.sayHi, it returns a REFERENCE TYPE, not a function,
+but a reference to it. 
+
+The reference type looks like this: (base, name, strict)
+ - base: the object 
+ - name: the property name
+ - strict: if use strict is active
+
+JS needs the reference type to handle the 'this'. 
+Then it adds the (), to run the function.
+
+When you do:
+let hi = user.sayHi;
+
+You're just grabbing the content of the function, and putting it in
+the variable 'hi'. Now, there is no object, so no reference type, so 
+nowhere for 'this' to look.
+*/
