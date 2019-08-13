@@ -22,3 +22,5 @@ switch (age) {
         );
         break;
 }
+
+console.log(true);

@@ -150,3 +150,16 @@ You're just grabbing the content of the function, and putting it in
 the variable 'hi'. Now, there is no object, so no reference type, so 
 nowhere for 'this' to look.
 */
+
+/* TYPE CONVERSION */
+//
+user = {
+    name: "Abbey",
+    money: 1000,
+    [Symbol.toPrimitive](hint) {
+        return hint == "string" ? this.name : this.money;
+    }
+};
+
+console.log(user); // will return "Abbey"
+console.log(+user); // will return 1000
