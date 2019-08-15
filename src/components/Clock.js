@@ -1,5 +1,4 @@
 import React from "react";
-import { stringTypeAnnotation } from "@babel/types";
 
 /** This is a simple component that serves the purpose of
  * displaying how state and lifecycle works in React
