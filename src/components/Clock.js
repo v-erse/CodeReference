@@ -1,7 +1,9 @@
 import React from "react";
+import { stringTypeAnnotation } from "@babel/types";
 
 /** This is a simple component that serves the purpose of
- * displaying how state and lifecycle works in React  */
+ * displaying how state and lifecycle works in React
+ */
 class Clock extends React.Component {
     constructor(props) {
         super(props);
@@ -17,9 +19,13 @@ class Clock extends React.Component {
     }
 
     tick() {
-        this.setState({
+        /* When you use an arrow function in setState like this, it will
+        receive up-to-date state and props as arguments. 
+        If you need to use the current state/props then it's best to do this
+        because the code won't always show the latest version of it all */
+        this.setState((state, props) => ({
             date: new Date()
-        });
+        }));
     }
 
     render() {
