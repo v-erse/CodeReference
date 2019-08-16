@@ -5,12 +5,14 @@ import EventHandling from "./components/EventHandling";
 import "./index.css";
 import ConditionalRendering from "./components/ConditionalRendering";
 import ListsAndKeys from "./components/ListsAndKeys";
+import ControlledComponents from "./components/ControlledComponents";
 
 function App() {
     return (
         <div>
             <Nav theme="dark" />
-            <ListsAndKeys />
+            <a href="https://roadmap.sh/">Roadmap Reference</a>
+            <ControlledComponents />
         </div>
     );
 }
