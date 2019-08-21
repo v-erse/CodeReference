@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 
 /**
+ * State is used when the data involved will change over time.
+ * Otherwise we only use props.
+ *
  * Often, several components need to reflect the same changing
  * data. This is why we lift the shared state up to their
  * closest common ancestor.

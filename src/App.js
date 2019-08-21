@@ -1,13 +1,14 @@
 import React from "react";
 import Nav from "./components/Nav";
-import Clock from "./components/Clock";
-import EventHandling from "./components/EventHandling";
+import Clock from "./components/React-docs-guide/Clock";
+import EventHandling from "./components/React-docs-guide/EventHandling";
 import "./index.css";
-import ConditionalRendering from "./components/ConditionalRendering";
-import ListsAndKeys from "./components/ListsAndKeys";
-import ControlledComponents from "./components/ControlledComponents";
-import Calculator from "./components/LiftingStateUp";
-import CompositionVsInheritance from "./components/CompositionVsInheritance";
+import ConditionalRendering from "./components/React-docs-guide/ConditionalRendering";
+import ListsAndKeys from "./components/React-docs-guide/ListsAndKeys";
+import ControlledComponents from "./components/React-docs-guide/ControlledComponents";
+import Calculator from "./components/React-docs-guide/LiftingStateUp";
+import CompositionVsInheritance from "./components/React-docs-guide/CompositionVsInheritance";
+import FilterableProductTable from "./components/React-docs-guide/ThinkingInReact";
 
 /**
  * Relevant links:
@@ -19,7 +20,7 @@ function App() {
     return (
         <div>
             <Nav theme="dark" />
-            <CompositionVsInheritance />
+            <FilterableProductTable />
         </div>
     );
 }
