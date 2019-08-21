@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { thisExpression } from "@babel/types";
 
 /**
  * Often, several components need to reflect the same changing
