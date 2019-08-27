@@ -52,14 +52,43 @@ const PRODUCTS = [
 ];
 
 export class FilterableProductTable extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            filterText: "",
+            inStockOnly: false
+        };
+
+        this.handleFilterTextChange = this.handleFilterTextChange.bind(this);
+        this.handleInStockChange = this.handleInStockChange.bind(this);
+    }
+
+    handleFilterTextChange(filterText) {
+        this.setState({ filterText });
+    }
+
+    handleInStockChange(inStockOnly) {
+        this.setState({ inStockOnly });
+    }
+
     render() {
         return (
             <div
                 className="m-5 p-4"
                 style={{ width: "18rem", border: "1px solid" }}
+                id="FilterableProductTable"
             >
-                <SearchBar />
-                <ProductTable products={PRODUCTS} />
+                <SearchBar
+                    filterText={this.state.filterText}
+                    inStockOnly={this.state.inStockOnly}
+                    onFilterTextChange={this.handleFilterTextChange}
+                    onInStockChange={this.handleInStockChange}
+                />
+                <ProductTable
+                    products={PRODUCTS}
+                    filterText={this.state.filterText}
+                    inStockOnly={this.state.inStockOnly}
+                />
             </div>
         );
     }
@@ -67,10 +96,24 @@ export class FilterableProductTable extends Component {
 
 function SearchBar(props) {
     return (
-        <form>
-            <input type="text" placeholder="Search..." />
+        <form id="SearchBar">
+            <input
+                type="text"
+                placeholder="Search..."
+                value={props.filterText}
+                onChange={e => {
+                    props.onFilterTextChange(e.target.value);
+                }}
+            />
             <p>
-                <input type="checkbox" /> Only show products in stock
+                <input
+                    type="checkbox"
+                    checked={props.inStockOnly}
+                    onChange={e => {
+                        props.onInStockChange(e.target.checked);
+                    }}
+                />{" "}
+                Only show products in stock
             </p>
         </form>
     );
@@ -81,6 +124,12 @@ function ProductTable(props) {
     let lastCategory = null;
 
     props.products.forEach(product => {
+        if (product.name.indexOf(props.filterText) === -1) {
+            return;
+        }
+        if (props.inStockOnly && !product.stocked) {
+            return;
+        }
         if (product.category !== lastCategory) {
             rows.push(
                 <ProductCategoryRow
@@ -95,7 +144,7 @@ function ProductTable(props) {
     });
 
     return (
-        <table>
+        <table id="ProductTable">
             <thead>
                 <tr>
                     <th>Name</th>
@@ -109,7 +158,7 @@ function ProductTable(props) {
 
 function ProductCategoryRow(props) {
     return (
-        <tr>
+        <tr id="ProductCategoryRow">
             <th colSpan="2">{props.category}</th>
         </tr>
     );
@@ -124,7 +173,7 @@ function ProductRow(props) {
     );
 
     return (
-        <tr>
+        <tr id="ProductRow">
             <td>{name}</td>
             <td>{product.price}</td>
         </tr>
