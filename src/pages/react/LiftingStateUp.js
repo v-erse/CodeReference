@@ -63,7 +63,7 @@ class TemperatureInput extends Component {
             <fieldset>
                 <legend>Enter temperature in {scaleNames[scale]}</legend>
                 <input
-                    type="text"
+                    type='text'
                     value={temperature}
                     onChange={this.handleChange}
                 />
@@ -99,12 +99,12 @@ export class Calculator extends Component {
         return (
             <div>
                 <TemperatureInput
-                    scale="c"
+                    scale='c'
                     temperature={celsius}
                     onTemperatureChange={this.handleCelsiusChange}
                 />
                 <TemperatureInput
-                    scale="f"
+                    scale='f'
                     temperature={fahrenheit}
                     onTemperatureChange={this.handleFahrenheitChange}
                 />

@@ -74,10 +74,9 @@ export class FilterableProductTable extends Component {
     render() {
         return (
             <div
-                className="m-5 p-4"
+                className='m-5 p-4'
                 style={{ width: "18rem", border: "1px solid" }}
-                id="FilterableProductTable"
-            >
+                id='FilterableProductTable'>
                 <SearchBar
                     filterText={this.state.filterText}
                     inStockOnly={this.state.inStockOnly}
@@ -96,20 +95,20 @@ export class FilterableProductTable extends Component {
 
 function SearchBar(props) {
     return (
-        <form id="SearchBar">
+        <form id='SearchBar'>
             <input
-                type="text"
-                placeholder="Search..."
+                type='text'
+                placeholder='Search...'
                 value={props.filterText}
-                onChange={e => {
+                onChange={(e) => {
                     props.onFilterTextChange(e.target.value);
                 }}
             />
             <p>
                 <input
-                    type="checkbox"
+                    type='checkbox'
                     checked={props.inStockOnly}
-                    onChange={e => {
+                    onChange={(e) => {
                         props.onInStockChange(e.target.checked);
                     }}
                 />{" "}
@@ -123,7 +122,7 @@ function ProductTable(props) {
     const rows = [];
     let lastCategory = null;
 
-    props.products.forEach(product => {
+    props.products.forEach((product) => {
         if (product.name.indexOf(props.filterText) === -1) {
             return;
         }
@@ -144,7 +143,7 @@ function ProductTable(props) {
     });
 
     return (
-        <table id="ProductTable">
+        <table id='ProductTable'>
             <thead>
                 <tr>
                     <th>Name</th>
@@ -158,8 +157,8 @@ function ProductTable(props) {
 
 function ProductCategoryRow(props) {
     return (
-        <tr id="ProductCategoryRow">
-            <th colSpan="2">{props.category}</th>
+        <tr id='ProductCategoryRow'>
+            <th colSpan='2'>{props.category}</th>
         </tr>
     );
 }
@@ -173,7 +172,7 @@ function ProductRow(props) {
     );
 
     return (
-        <tr id="ProductRow">
+        <tr id='ProductRow'>
             <td>{name}</td>
             <td>{product.price}</td>
         </tr>

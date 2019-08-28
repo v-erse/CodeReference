@@ -28,7 +28,7 @@ export class ListsAndKeys extends Component {
                 It's usually easier to read this way. */}
                 <p>From embedded map</p>
                 <ul>
-                    {this.state.numbers.map(number => (
+                    {this.state.numbers.map((number) => (
                         <li key={number.toString()}>{number}</li>
                     ))}
                 </ul>

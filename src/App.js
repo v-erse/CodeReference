@@ -13,9 +13,9 @@ import ReactHome from "./pages/react/ReactHome";
 function App() {
     return (
         <Router>
-            <HeaderNav theme="dark" />
-            <Route exact path="/" component={Home} />
-            <Route path="/react" component={ReactHome} />
+            <HeaderNav theme='dark' />
+            <Route exact path='/' component={Home} />
+            <Route path='/react' component={ReactHome} />
         </Router>
     );
 }

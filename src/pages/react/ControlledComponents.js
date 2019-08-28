@@ -39,27 +39,26 @@ export class ControlledComponents extends Component {
                     <label>
                         Input:{" "}
                         <input
-                            type="text"
-                            name="input"
+                            type='text'
+                            name='input'
                             value={this.state.input}
                             onChange={this.handleChange}
                         />
                     </label>
-                    <input type="submit" value="Submit" />
+                    <input type='submit' value='Submit' />
                     <p>{this.state.input}</p>
                 </form>
                 <form onSubmit={this.handleSubmit}>
                     <select
-                        name="selection"
+                        name='selection'
                         value={this.state.selection}
-                        onChange={this.handleChange}
-                    >
-                        <option value="grapefruit">Grapefruit</option>
-                        <option value="lime">Lime</option>
-                        <option value="coconut">Coconut</option>
-                        <option value="mango">Mango</option>
+                        onChange={this.handleChange}>
+                        <option value='grapefruit'>Grapefruit</option>
+                        <option value='lime'>Lime</option>
+                        <option value='coconut'>Coconut</option>
+                        <option value='mango'>Mango</option>
                     </select>
-                    <input type="submit" value="Submit" />
+                    <input type='submit' value='Submit' />
                     <p>{this.state.selection}</p>
                 </form>
             </div>

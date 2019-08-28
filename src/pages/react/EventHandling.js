@@ -12,7 +12,7 @@ class EventHandling extends React.Component {
     }
 
     handleClick = () => {
-        this.setState(state => ({
+        this.setState((state) => ({
             isToggleOn: !state.isToggleOn
         }));
     };
@@ -25,8 +25,7 @@ class EventHandling extends React.Component {
                         this.state.isToggleOn ? "dark" : "light"
                     }`}
                     style={{ margin: 30 }}
-                    onClick={this.handleClick}
-                >
+                    onClick={this.handleClick}>
                     {this.state.isToggleOn
                         ? "Turn Lights On"
                         : "Turn Lights Off"}

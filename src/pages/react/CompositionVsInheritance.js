@@ -11,15 +11,14 @@ export class CompositionVsInheritance extends Component {
         return (
             <Hero
                 // Pass text through props
-                title="Hello, world!"
+                title='Hello, world!'
                 // Pass JSX through props
-                subtext={<h5>Lorem Ipsum Dolor Sit Amet</h5>}
-            >
+                subtext={<h5>Lorem Ipsum Dolor Sit Amet</h5>}>
                 {/* JSX put between tags goes into props.children */}
                 <input
-                    type="button"
-                    class="btn btn-primary mt-4"
-                    value="button"
+                    type='button'
+                    class='btn btn-primary mt-4'
+                    value='button'
                 />
             </Hero>
         );
@@ -28,7 +27,7 @@ export class CompositionVsInheritance extends Component {
 
 function Hero(props) {
     return (
-        <div className="jumbotron">
+        <div className='jumbotron'>
             <h1>{props.title}</h1>
             <hr />
             <p>{props.subtext}</p>
