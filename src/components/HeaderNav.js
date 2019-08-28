@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-class Nav extends React.Component {
+class HeaderNav extends React.Component {
     render() {
         return (
             <nav
@@ -43,13 +43,13 @@ class Nav extends React.Component {
                             </Link>
                         </li>
                         <li className="nav-item">
-                            <Link to="front-end" className="nav-link">
-                                Front-end Frameworks
+                            <Link to="/react" className="nav-link">
+                                React
                             </Link>
                         </li>
                         <li className="nav-item">
                             <Link to="back-end" className="nav-link">
-                                Back-end Frameworks
+                                Back-end
                             </Link>
                         </li>
                         <li className="nav-item">
@@ -64,4 +64,4 @@ class Nav extends React.Component {
     }
 }
 
-export default Nav;
+export default HeaderNav;
