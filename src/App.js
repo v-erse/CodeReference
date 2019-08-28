@@ -1,8 +1,7 @@
 import React from "react";
 import Nav from "./components/Nav";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import A11y from "./components/React-docs-guide/Advanced-guides/A11y";
-import Home from "./components/Home";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import Home from "./pages/Home";
 
 /**
  * Relevant links:
