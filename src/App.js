@@ -1,14 +1,8 @@
 import React from "react";
 import Nav from "./components/Nav";
-import Clock from "./components/React-docs-guide/Clock";
-import EventHandling from "./components/React-docs-guide/EventHandling";
-import "./index.css";
-import ConditionalRendering from "./components/React-docs-guide/ConditionalRendering";
-import ListsAndKeys from "./components/React-docs-guide/ListsAndKeys";
-import ControlledComponents from "./components/React-docs-guide/ControlledComponents";
-import Calculator from "./components/React-docs-guide/LiftingStateUp";
-import CompositionVsInheritance from "./components/React-docs-guide/CompositionVsInheritance";
-import FilterableProductTable from "./components/React-docs-guide/ThinkingInReact";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import A11y from "./components/React-docs-guide/Advanced-guides/A11y";
+import Home from "./components/Home";
 
 /**
  * Relevant links:
@@ -18,10 +12,10 @@ import FilterableProductTable from "./components/React-docs-guide/ThinkingInReac
 
 function App() {
     return (
-        <div>
+        <Router>
             <Nav theme="dark" />
-            <FilterableProductTable />
-        </div>
+            <Route exact path="/" component={Home} />
+        </Router>
     );
 }
 

@@ -1,4 +1,5 @@
 import React from "react";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class Nav extends React.Component {
     render() {
@@ -8,9 +9,9 @@ class Nav extends React.Component {
                     this.props.theme
                 } bg-${this.props.theme}`}
             >
-                <a className="navbar-brand" href="#">
+                <Link to="/" className="navbar-brand">
                     Web Dev Cheatsheet
-                </a>
+                </Link>
                 <button
                     className="navbar-toggler"
                     type="button"
@@ -22,39 +23,39 @@ class Nav extends React.Component {
                 <div className="collapse navbar-collapse" id="navbarNav">
                     <ul className="navbar-nav">
                         <li className="nav-item">
-                            <a className="nav-link" href="#">
+                            <Link to="/HTML" className="nav-link">
                                 HTML
-                            </a>
+                            </Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">
+                            <Link to="/CSS" className="nav-link">
                                 CSS
-                            </a>
+                            </Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">
+                            <Link to="/JS" className="nav-link">
                                 JavaScript
-                            </a>
+                            </Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">
+                            <Link to="/node" className="nav-link">
                                 Node
-                            </a>
+                            </Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">
-                                Front-end
-                            </a>
+                            <Link to="front-end" className="nav-link">
+                                Front-end Frameworks
+                            </Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">
-                                Back-end
-                            </a>
+                            <Link to="back-end" className="nav-link">
+                                Back-end Frameworks
+                            </Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">
+                            <Link to="deployment" className="nav-link">
                                 Deployment
-                            </a>
+                            </Link>
                         </li>
                     </ul>
                 </div>
