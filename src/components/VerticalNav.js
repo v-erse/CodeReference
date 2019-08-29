@@ -1,29 +1,30 @@
 import React, { Component } from "react";
+import { Nav, Accordion, Button, Card } from "react-bootstrap";
 
 export class VerticalNav extends Component {
     render() {
         return (
-            <ul
-                className='nav flex-column float-left m-5 accordion'
-                id='vertNav'>
-                <li className='nav-item card'>
-                    <div className='nav-link card-header'>
-                        <button
-                            className='btn btn-link'
-                            data-toggle='collapse'
-                            data-target='#sub1'>
+            <Accordion className='flex-column m-5 float-left'>
+                <Nav.Item>
+                    <Nav.Link>
+                        <Accordion.Toggle
+                            as={Button}
+                            variant='link'
+                            eventKey='0'>
                             Components
-                        </button>
-                    </div>
-
-                    <div id='sub1' data-parent='#vertNav'>
-                        peekaboo
-                    </div>
-                </li>
-                <li className='nav-item card'>
-                    <a className='nav-link card-header'>State</a>
-                </li>
-            </ul>
+                        </Accordion.Toggle>
+                    </Nav.Link>
+                    <Accordion.Collapse eventKey='0'>
+                        <p>I'm the body</p>
+                    </Accordion.Collapse>
+                </Nav.Item>
+                <Nav.Item>
+                    <Nav.Link>State</Nav.Link>
+                </Nav.Item>
+                <Nav.Item>
+                    <Nav.Link>Composition</Nav.Link>
+                </Nav.Item>
+            </Accordion>
         );
     }
 }
