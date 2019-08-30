@@ -4,12 +4,7 @@ import SplitPage from "../../components/SplitPage";
 
 export class ReactHome extends Component {
     render() {
-        return (
-            <SplitPage
-                left={<VerticalNav />}
-                right={<p>This is the React page</p>}
-            />
-        );
+        return <SplitPage left={<VerticalNav />} right={<h1>React</h1>} />;
     }
 }
 

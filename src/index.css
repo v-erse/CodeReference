@@ -17,43 +17,32 @@ code {
         monospace;
 }
 
+h1 {
+    font-weight: 600;
+}
+
 .splitPage {
     height: 100%;
     display: grid;
-    grid-template-columns: 1fr 4fr;
+    grid-template-columns: 1fr 3.5fr 0.5fr;
 }
 
 .splitPageLeft {
     grid-column: 1 2;
-    grid-row: 1 2;
-    padding: 2rem 3rem;
-    border-right: 1px solid black;
+    padding: 1rem 1rem;
 }
 
 .splitPageRight {
-    padding: 2rem 4rem 2rem 4rem;
+    grid-column: 2 3;
+    padding: 1.5rem 2rem;
 }
 
-.collapsibleList {
+.verticalNavContainer {
+    padding: 1rem 0;
+}
+
+.verticalNav {
+    font-size: 0.8rem;
     list-style: none;
-    padding: 0;
-    margin: 0;
-    text-indent: 1rem;
-}
-
-.collapsibleList li {
-    list-style: none;
-    padding: 0;
-    position: relative;
-}
-
-.collapsibleList label {
-    cursor: pointer;
-}
-
-.collapsibleList label::before {
-    content: "\25B7";
-    position: relative;
-    left: -1rem;
-    top: -2px;
+    padding: 0.125rem 1.5rem;
 }

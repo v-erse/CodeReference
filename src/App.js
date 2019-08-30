@@ -1,5 +1,4 @@
 import React from "react";
-import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import HeaderNav from "./components/HeaderNav";
 import { BrowserRouter as Router, Route } from "react-router-dom";
