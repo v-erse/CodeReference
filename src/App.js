@@ -1,9 +1,11 @@
 import React from "react";
+import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import HeaderNav from "./components/HeaderNav";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import ReactHome from "./pages/react/ReactHome";
+import SplitPage from "./components/SplitPage";
 
 /**
  * Relevant links:
@@ -13,11 +15,13 @@ import ReactHome from "./pages/react/ReactHome";
 
 function App() {
     return (
-        <Router>
+        <>
             <HeaderNav dark />
-            <Route exact path='/' component={Home} />
-            <Route path='/react' component={ReactHome} />
-        </Router>
+            <Router>
+                <Route exact path='/' component={Home} />
+                <Route path='/react' component={ReactHome} />
+            </Router>
+        </>
     );
 }
 
