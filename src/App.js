@@ -4,7 +4,6 @@ import HeaderNav from "./components/HeaderNav";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import ReactHome from "./pages/react/ReactHome";
-import SplitPage from "./components/SplitPage";
 
 /**
  * Relevant links:

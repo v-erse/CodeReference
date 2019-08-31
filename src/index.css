@@ -39,10 +39,10 @@ h1 {
 
 .verticalNavContainer {
     padding: 1rem 0;
+    font-size: 0.8rem;
 }
 
-.verticalNav {
-    font-size: 0.8rem;
+.verticalNavContainer ul {
     list-style: none;
     padding: 0.125rem 1.5rem;
 }

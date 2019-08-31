@@ -1,23 +1,53 @@
 import React, { Component } from "react";
 
-export class VerticalNav extends Component {
+export class VNavItem extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { highlighted: false };
+    }
+
+    handleMouseEnter = () => {
+        this.setState({ highlighted: true });
+    };
+
+    handleMouseLeave = () => {
+        this.setState({ highlighted: false });
+    };
+
     render() {
+        let styles = this.state.highlighted
+            ? { color: "blue" }
+            : { color: "black" };
         return (
-            <div className='verticalNavContainer'>
-                <ul className='verticalNav'>
-                    <li>React</li>
-                    <ul className='verticalNav'>
-                        <li>Components</li>
-                        <ul className='verticalNav'>
-                            <li>Functional</li>
-                            <li>Class based</li>
-                        </ul>
-                        <li>State</li>
-                        <li>Composition</li>
-                        <li>Conditional Rendering</li>
-                    </ul>
-                </ul>
-            </div>
+            <li
+                onMouseEnter={this.handleMouseEnter}
+                onMouseLeave={this.handleMouseLeave}
+                style={styles}>
+                {this.props.title}
+            </li>
+        );
+    }
+}
+
+export class VerticalNav extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { active: "React" };
+    }
+
+    render() {
+        React.Children.forEach(this.props.children, (child) => {
+            if (!React.isValidElement(child)) {
+                return child.props.title;
+            }
+
+            if (child.props.children) {
+                child = React.cloneElement(child, { children });
+            }
+        });
+
+        return (
+            <div className='verticalNavContainer'>{this.props.children}</div>
         );
     }
 }
