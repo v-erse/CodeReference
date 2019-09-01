@@ -4,6 +4,7 @@ import HeaderNav from "./components/HeaderNav";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import ReactHome from "./pages/react/ReactHome";
+import Footer from "./components/Footer";
 
 /**
  * Relevant links:
@@ -14,11 +15,12 @@ import ReactHome from "./pages/react/ReactHome";
 function App() {
     return (
         <div>
-            <HeaderNav />
+            <HeaderNav dark />
             <Router>
                 <Route exact path='/' component={Home} />
                 <Route path='/react' component={ReactHome} />
             </Router>
+            <Footer></Footer>
         </div>
     );
 }

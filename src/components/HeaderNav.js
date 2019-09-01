@@ -3,10 +3,9 @@ import { Navbar, Nav } from "react-bootstrap";
 
 class HeaderNav extends React.Component {
     render() {
-        const theme = this.props.dark ? "dark" : "light";
         return (
             <div>
-                <Navbar bg={theme} variant={theme} expand='lg' fixed='top'>
+                <Navbar expand='lg'>
                     <Navbar.Brand href='/'>Web Dev Cheatsheet</Navbar.Brand>
                     <Navbar.Toggle aria-controls='basic-navbar-nav' />
                     <Navbar.Collapse id='basic-navbar-nav'>

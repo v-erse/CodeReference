@@ -10,6 +10,7 @@ body,
         "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    color: #474747;
 }
 
 code {
@@ -20,13 +21,13 @@ code {
 .navbar {
     height: 65px;
     padding: 0px 20px;
+    background-color: #eaeaea;
 }
 
 .splitPage {
-    height: 100%;
-    margin-top: 4rem;
     display: grid;
-    grid-template-columns: 1fr 1.9fr 1fr;
+    grid-template-columns: 0.88fr 2fr 0.88fr;
+    margin-bottom: 50px;
 }
 
 .splitPageLeft {
@@ -35,23 +36,52 @@ code {
 }
 
 .splitPageRight {
+    grid-column-start: 3;
+    grid-column-end: 4;
+}
+
+.splitPageLeft,
+.splitPageRight {
+    background-color: #f7f7f7;
+    margin-bottom: -50px;
+    padding: 2rem;
+}
+
+.splitPageMiddle {
     grid-column-start: 2;
     grid-column-end: 3;
-    padding: 1.5rem 2rem;
+    padding: 1.5rem 2.5rem;
 }
 
 .verticalNav {
     position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
+    margin-top: -0.8rem;
+}
+
+.verticalNav ul,
+.verticalNav li {
     font-size: 0.8rem;
-}
-
-.verticalNav ul {
     list-style: none;
-    padding: 0.125rem 1.75rem;
+    margin: 0;
+    line-height: 210%;
+    cursor: pointer;
+}
+.verticalNav ul {
+    padding: 0 1rem;
 }
 
-.vNavItem {
-    cursor: pointer;
+.footer {
+    background-color: #707070;
+    height: 100px;
+    width: 100%;
+    display: grid;
+}
+
+.footer code {
+    margin: auto;
+    color: white;
+}
+
+.footer code a {
+    color: white;
 }

@@ -1,25 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 
 export function SplitPage(props) {
-    const [leftVisible, setLeftVisible] = useState(false);
-
-    function handleMouseEnter() {
-        setLeftVisible(true);
-    }
-
-    function handleMouseLeave() {
-        setLeftVisible(false);
-    }
-
-    let left = leftVisible ? props.left : "";
     return (
         <div className='splitPage'>
-            <div
-                className='splitPageLeft'
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}>
-                {left}
-            </div>
+            <div className='splitPageLeft'>{props.left}</div>
+            <div className='splitPageMiddle'>{props.middle}</div>
             <div className='splitPageRight'>{props.right}</div>
         </div>
     );

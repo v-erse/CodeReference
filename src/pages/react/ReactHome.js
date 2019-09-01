@@ -5,37 +5,10 @@ import SplitPage from "../../components/SplitPage";
 export function ReactHome() {
     return (
         <SplitPage
-            left={
-                <VerticalNav>
-                    <ul>
-                        <VNavItem>Lorem</VNavItem>
-                        <VNavItem>Ipsum</VNavItem>
-                        <ul>
-                            <VNavItem>Dolor</VNavItem>
-                            <VNavItem>Sit amet</VNavItem>
-                        </ul>
-                        <VNavItem>Consectetur</VNavItem>
-                        <ul>
-                            <VNavItem>Adipiscing elit</VNavItem>
-                            <VNavItem>Sed do eiusmod</VNavItem>
-                            <ul>
-                                <VNavItem>Tempor</VNavItem>
-                            </ul>
-                        </ul>
-                        <VNavItem>Incididunt</VNavItem>
-                        <ul>
-                            <VNavItem>Ut labore</VNavItem>
-                            <ul>
-                                <VNavItem>Et dolore</VNavItem>
-                                <VNavItem>Magna aliqua</VNavItem>
-                            </ul>
-                        </ul>
-                    </ul>
-                </VerticalNav>
-            }
-            right={
+            right={<VerticalNav></VerticalNav>}
+            middle={
                 <div>
-                    <h1>React</h1>
+                    <h2>Keep Calm</h2>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Delectus dolorem, quisquam nemo provident suscipit
