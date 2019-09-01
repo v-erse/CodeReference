@@ -6,7 +6,7 @@ class HeaderNav extends React.Component {
         const theme = this.props.dark ? "dark" : "light";
         return (
             <div>
-                <Navbar bg={theme} variant={theme} expand='lg'>
+                <Navbar bg={theme} variant={theme} expand='lg' fixed='top'>
                     <Navbar.Brand href='/'>Web Dev Cheatsheet</Navbar.Brand>
                     <Navbar.Toggle aria-controls='basic-navbar-nav' />
                     <Navbar.Collapse id='basic-navbar-nav'>

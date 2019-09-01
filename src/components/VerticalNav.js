@@ -1,55 +1,44 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 
-export class VNavItem extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { highlighted: false };
+export function VNavItem(props) {
+    const [highlighted, setHighlighted] = useState(false);
+
+    function handleMouseEnter() {
+        setHighlighted(true);
     }
 
-    handleMouseEnter = () => {
-        this.setState({ highlighted: true });
-    };
-
-    handleMouseLeave = () => {
-        this.setState({ highlighted: false });
-    };
-
-    render() {
-        let styles = this.state.highlighted
-            ? { color: "blue" }
-            : { color: "black" };
-        return (
-            <li
-                onMouseEnter={this.handleMouseEnter}
-                onMouseLeave={this.handleMouseLeave}
-                style={styles}>
-                {this.props.title}
-            </li>
-        );
+    function handleMouseLeave() {
+        setHighlighted(false);
     }
+
+    let styles = { color: "gray" };
+    if (highlighted) {
+        styles.color = "blue";
+    }
+
+    return (
+        <li
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            style={styles}
+            className='vNavItem'>
+            {props.children}
+        </li>
+    );
 }
 
-export class VerticalNav extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { active: "React" };
+export function VerticalNav(props) {
+    const [visible, setVisible] = useState(false);
+
+    function handleMouseEnter() {
+        setVisible(true);
     }
 
-    render() {
-        React.Children.forEach(this.props.children, (child) => {
-            if (!React.isValidElement(child)) {
-                return child.props.title;
-            }
-
-            if (child.props.children) {
-                child = React.cloneElement(child, { children });
-            }
-        });
-
-        return (
-            <div className='verticalNavContainer'>{this.props.children}</div>
-        );
+    function handleMouseLeave() {
+        setVisible(false);
     }
+
+    return <div className='verticalNav'>{props.children}</div>;
 }
 
 export default VerticalNav;

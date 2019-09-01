@@ -17,19 +17,21 @@ code {
         monospace;
 }
 
-h1 {
-    font-weight: 600;
+.navbar {
+    height: 65px;
+    padding: 20px;
 }
 
 .splitPage {
     height: 100%;
+    margin-top: 4rem;
     display: grid;
-    grid-template-columns: 1fr 3.5fr 0.5fr;
+    grid-template-columns: 1fr 2fr 1fr;
 }
 
 .splitPageLeft {
     grid-column: 1 2;
-    padding: 1rem 1rem;
+    padding: 1rem 1.5rem;
 }
 
 .splitPageRight {
@@ -37,12 +39,19 @@ h1 {
     padding: 1.5rem 2rem;
 }
 
-.verticalNavContainer {
-    padding: 1rem 0;
+.verticalNav {
+    position: fixed;
+    top: 40%;
+    transform: translateY(-50%);
     font-size: 0.8rem;
+    border-left: 2px dotted gray;
 }
 
-.verticalNavContainer ul {
+.verticalNav ul {
     list-style: none;
-    padding: 0.125rem 1.5rem;
+    padding: 0.125rem 1.75rem;
+}
+
+.vNavItem {
+    cursor: pointer;
 }

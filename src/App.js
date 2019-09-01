@@ -13,13 +13,13 @@ import ReactHome from "./pages/react/ReactHome";
 
 function App() {
     return (
-        <>
-            <HeaderNav dark />
+        <div>
+            <HeaderNav />
             <Router>
                 <Route exact path='/' component={Home} />
                 <Route path='/react' component={ReactHome} />
             </Router>
-        </>
+        </div>
     );
 }
 
