@@ -13,7 +13,7 @@ export function VNavItem(props) {
 
     let styles = { color: "gray" };
     if (highlighted) {
-        styles.color = "blue";
+        styles.color = "black";
     }
 
     return (
@@ -28,16 +28,6 @@ export function VNavItem(props) {
 }
 
 export function VerticalNav(props) {
-    const [visible, setVisible] = useState(false);
-
-    function handleMouseEnter() {
-        setVisible(true);
-    }
-
-    function handleMouseLeave() {
-        setVisible(false);
-    }
-
     return <div className='verticalNav'>{props.children}</div>;
 }
 

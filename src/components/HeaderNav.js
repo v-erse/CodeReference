@@ -10,7 +10,7 @@ class HeaderNav extends React.Component {
                     <Navbar.Brand href='/'>Web Dev Cheatsheet</Navbar.Brand>
                     <Navbar.Toggle aria-controls='basic-navbar-nav' />
                     <Navbar.Collapse id='basic-navbar-nav'>
-                        <Nav className='mr-auto'>
+                        <Nav className='ml-auto'>
                             <Nav.Link href='/HTML'>HTML</Nav.Link>
                             <Nav.Link href='/CSS'>CSS</Nav.Link>
                             <Nav.Link href='/JS'>JavaScript</Nav.Link>

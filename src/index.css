@@ -19,32 +19,32 @@ code {
 
 .navbar {
     height: 65px;
-    padding: 20px;
+    padding: 0px 20px;
 }
 
 .splitPage {
     height: 100%;
     margin-top: 4rem;
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 1fr 1.9fr 1fr;
 }
 
 .splitPageLeft {
-    grid-column: 1 2;
-    padding: 1rem 1.5rem;
+    grid-column-start: 1;
+    grid-column-end: 2;
 }
 
 .splitPageRight {
-    grid-column: 2 3;
+    grid-column-start: 2;
+    grid-column-end: 3;
     padding: 1.5rem 2rem;
 }
 
 .verticalNav {
     position: fixed;
-    top: 40%;
+    top: 50%;
     transform: translateY(-50%);
     font-size: 0.8rem;
-    border-left: 2px dotted gray;
 }
 
 .verticalNav ul {
