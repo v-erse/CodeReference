@@ -1,6 +1,16 @@
 import React from "react";
-import { VerticalNav, VNavItem } from "../../components/VerticalNav";
+import { VerticalNav } from "../../components/VerticalNav";
 import SplitPage from "../../components/SplitPage";
+import CodeBlock from "../../components/CodeBlock";
+
+const code = `
+function CodeBlock(props) {
+    return (
+        <pre>
+            <code>Hello, world!</code>
+        </pre>
+    );
+}`;
 
 export function ReactHome() {
     return (
@@ -8,7 +18,17 @@ export function ReactHome() {
             right={<VerticalNav></VerticalNav>}
             middle={
                 <div>
-                    <h2>Keep Calm</h2>
+                    <h1>Keep Calm</h1>
+                    <br />
+                    Things to learn:
+                    <ul>
+                        <li>Markdown to write with</li>
+                        <ul>
+                            <li>mdx</li>
+                            <li>React markdown</li>
+                        </ul>
+                        <li>Render props</li>
+                    </ul>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Delectus dolorem, quisquam nemo provident suscipit
@@ -26,6 +46,7 @@ export function ReactHome() {
                         reiciendis commodi dolorem cum tempora necessitatibus
                         aspernatur perferendis est molestiae! Commodi odio
                     </p>
+                    <CodeBlock>{code}</CodeBlock>
                     <p>
                         doloribus adipisci. Voluptatum hic nihil, accusantium
                         ab, facilis labore explicabo dicta sit inventore, dolor

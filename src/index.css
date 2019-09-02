@@ -19,9 +19,8 @@ code {
 }
 
 .navbar {
-    height: 65px;
-    padding: 0px 20px;
-    background-color: #eaeaea;
+    padding: 12px 20px;
+    background-color: #252525;
 }
 
 .splitPage {
@@ -44,7 +43,7 @@ code {
 .splitPageRight {
     background-color: #f7f7f7;
     margin-bottom: -50px;
-    padding: 2rem;
+    padding: 1.25rem 2rem;
 }
 
 .splitPageMiddle {
@@ -54,8 +53,8 @@ code {
 }
 
 .verticalNav {
-    position: fixed;
-    margin-top: -0.8rem;
+    position: sticky;
+    top: 1.25rem;
 }
 
 .verticalNav ul,
@@ -70,8 +69,18 @@ code {
     padding: 0 1rem;
 }
 
+pre {
+    white-space: pre-wrap;
+}
+
+.codeBlock {
+    background-color: #252525;
+    margin: 1.5rem -2.5rem;
+    padding: 0 2.5rem;
+}
+
 .footer {
-    background-color: #707070;
+    background-color: #252525;
     height: 100px;
     width: 100%;
     display: grid;
