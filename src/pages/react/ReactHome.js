@@ -2,6 +2,7 @@ import React from "react";
 import { VerticalNav } from "../../components/VerticalNav";
 import SplitPage from "../../components/SplitPage";
 import CodeBlock from "../../components/CodeBlock";
+import ReactMarkdown from "react-markdown";
 
 const code = `
 function CodeBlock(props) {
@@ -18,22 +19,21 @@ export function ReactHome() {
             right={<VerticalNav></VerticalNav>}
             middle={
                 <div>
-                    <h1>Keep Calm</h1>
-                    <br />
-                    Things to learn:
+                    <h1>Fear Inoculum</h1>
+                    {/*Things to learn:
                     <ul>
                         <li>Markdown to write with</li>
                         <ul>
                             <li>mdx</li>
                             <li>React markdown</li>
                         </ul>
-                        <li>Render props</li>
-                    </ul>
+                    </ul> */}
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Delectus dolorem, quisquam nemo provident suscipit
                         perferendis quibusdam ipsa nulla facere labore incidunt,
                     </p>
+                    <h2>Pneuma</h2>
                     <p>
                         repellat numquam possimus soluta molestiae alias nisi et
                         vero. Aliquid quo ullam libero laudantium veritatis
@@ -60,6 +60,7 @@ export function ReactHome() {
                         accusamus vitae odio quos, harum quidem libero tempora
                         cupiditate ratione quo sequi assumenda. Doloremque sint
                     </p>
+                    <CodeBlock>{code}</CodeBlock>
                     <p>
                         nihil deleniti veniam. Nisi vel eveniet esse saepe,
                         tenetur itaque, ratione maxime voluptate expedita qui
@@ -74,6 +75,7 @@ export function ReactHome() {
                         Soluta iste assumenda optio, atque quasi eveniet
                         voluptatum temporibus quae similique nesciunt, ratione
                     </p>
+                    <CodeBlock>{code}</CodeBlock>
                     <p>
                         laborum incidunt id obcaecati quibusdam? Quam facere
                         odio placeat dolores pariatur illum necessitatibus ullam
@@ -141,7 +143,7 @@ export function ReactHome() {
                         asperiores ipsam vel dolor modi harum totam earum
                         dolorum maxime quisquam!
                     </p>
-                    <h2 id='Components'>Components</h2>
+                    <h2>Components</h2>
                     <p>
                         Lorem ipsum dolor sit amet consectetur, adipisicing
                         elit. Nihil maiores commodi odit necessitatibus
@@ -149,8 +151,6 @@ export function ReactHome() {
                         aut alias expedita hic debitis dolore minima! Odit,
                         dicta voluptas.
                     </p>
-                    <h3>Functional</h3>
-                    <h3>Class-based</h3>
                 </div>
             }
         />

@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import ReactHome from "./pages/react/ReactHome";
 import Footer from "./components/Footer";
+import JSHome from "./pages/javascript/JSHome";
 
 /**
  * Relevant links:
@@ -15,12 +16,13 @@ import Footer from "./components/Footer";
 function App() {
     return (
         <div>
-            <HeaderNav dark />
+            <HeaderNav />
             <Router>
                 <Route exact path='/' component={Home} />
                 <Route path='/react' component={ReactHome} />
+                <Route path='/JS' component={JSHome} />
             </Router>
-            <Footer></Footer>
+            <Footer />
         </div>
     );
 }

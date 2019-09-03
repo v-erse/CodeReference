@@ -29,8 +29,10 @@ export function VNavItem(props) {
 export function VerticalNav(props) {
     return (
         <div className='verticalNav'>
-            <VNavItem>It's not</VNavItem>
-            <VNavItem>Unlike you</VNavItem>
+            <VNavItem>Fear Inoculum</VNavItem>
+            <ul>
+                <VNavItem>Pneuma</VNavItem>
+            </ul>
             <VNavItem>No</VNavItem>
             <ul>
                 <VNavItem>It's not unlike</VNavItem>
