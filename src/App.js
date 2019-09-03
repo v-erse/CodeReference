@@ -16,8 +16,8 @@ import JSHome from "./pages/javascript/JSHome";
 function App() {
     return (
         <div>
-            <HeaderNav />
             <Router>
+                <HeaderNav />
                 <Route exact path='/' component={Home} />
                 <Route path='/react' component={ReactHome} />
                 <Route path='/JS' component={JSHome} />
