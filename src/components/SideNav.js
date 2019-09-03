@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export function VNavItem(props) {
+function VNavItem(props) {
     const [highlighted, setHighlighted] = useState(false);
 
     function handleMouseEnter() {
@@ -11,7 +11,7 @@ export function VNavItem(props) {
         setHighlighted(false);
     }
 
-    let styles = { color: "#D6D6D6" };
+    let styles = { color: "#D6D6D6", whiteSpace: "pre" };
     if (highlighted || props.active) {
         styles.color = "#A0A0A0";
     }
@@ -26,24 +26,16 @@ export function VNavItem(props) {
     );
 }
 
-export function VerticalNav(props) {
+export function SideNav(props) {
     return (
         <div className='verticalNav'>
-            <VNavItem>Fear Inoculum</VNavItem>
             <ul>
-                <VNavItem>Pneuma</VNavItem>
-            </ul>
-            <VNavItem>No</VNavItem>
-            <ul>
-                <VNavItem>It's not unlike</VNavItem>
-                <VNavItem>You</VNavItem>
-            </ul>
-            <VNavItem active>Keep calm</VNavItem>
-            <ul>
-                <VNavItem>Here we go again</VNavItem>
+                {props.items.map((item) => {
+                    return <VNavItem>{item}</VNavItem>;
+                })}
             </ul>
         </div>
     );
 }
 
-export default VerticalNav;
+export default SideNav;

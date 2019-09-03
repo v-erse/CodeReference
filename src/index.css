@@ -83,6 +83,10 @@ h2 {
     top: 1.25rem;
 }
 
+.verticalNav ul {
+    padding: 0;
+}
+
 .verticalNav ul,
 .verticalNav li {
     font-size: 0.8rem;
@@ -91,18 +95,9 @@ h2 {
     line-height: 210%;
     cursor: pointer;
 }
-.verticalNav ul {
-    padding: 0 1rem;
-}
 
 pre {
     white-space: pre-wrap;
-}
-
-.codeBlock {
-    background-color: #252525;
-    margin: 1.5rem -2.5rem;
-    padding: 0 2.5rem;
 }
 
 .footer {

@@ -4,7 +4,7 @@ import { tomorrow } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 const customStyles = {
     backgroundColor: "#111122",
-    margin: "1.5rem -2.5rem",
+    margin: "2rem -2.5rem",
     padding: "1.5rem 2.5rem",
     borderRadius: "0"
 };

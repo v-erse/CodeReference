@@ -28,7 +28,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae voluptatibu
 export default function JSHome() {
     return (
         <SplitPage
-            middle={<ReactMarkdown source={input} escapeHtml={false} />}
+            content={<ReactMarkdown source={input} escapeHtml={false} />}
         />
     );
 }
