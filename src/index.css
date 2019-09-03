@@ -22,11 +22,6 @@ body,
     flex-direction: column;
 }
 
-code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-        monospace;
-}
-
 h1,
 h2 {
     padding-bottom: 0.5rem;
@@ -41,6 +36,21 @@ h1 {
 h2 {
     font-size: 1.75rem;
     line-height: 2.5rem;
+}
+
+a,
+a:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+pre {
+    white-space: pre-wrap;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+        monospace;
 }
 
 .navbar-dark {
@@ -78,26 +88,22 @@ h2 {
     padding: 1.5rem 2.5rem;
 }
 
-.verticalNav {
+.sideNav {
     position: sticky;
     top: 1.25rem;
+    font-size: 0.8rem;
 }
 
-.verticalNav ul {
+.sideNav ul {
     padding: 0;
 }
 
-.verticalNav ul,
-.verticalNav li {
-    font-size: 0.8rem;
+.sideNav ul,
+.sideNav li {
     list-style: none;
     margin: 0;
     line-height: 210%;
     cursor: pointer;
-}
-
-pre {
-    white-space: pre-wrap;
 }
 
 .footer {
@@ -114,6 +120,6 @@ pre {
     color: white;
 }
 
-.footer code a {
-    color: white;
+.footer code a:hover {
+    text-decoration: underline;
 }

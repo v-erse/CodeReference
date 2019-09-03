@@ -17,25 +17,25 @@ function Link(props) {
 class HeaderNav extends React.Component {
     render() {
         return (
-            <nav class='navbar navbar-expand-lg navbar-dark'>
-                <a class='navbar-brand' href='#'>
-                    Web Dev Cheatsheet
-                </a>
+            <nav className='navbar navbar-expand-lg navbar-dark'>
+                <span className='navbar-brand'>
+                    <NavLink to='/'>Web Dev Cheatsheet</NavLink>
+                </span>
                 <button
-                    class='navbar-toggler'
+                    className='navbar-toggler'
                     type='button'
                     data-toggle='collapse'
                     data-target='#navbarSupportedContent'
                     aria-controls='navbarSupportedContent'
                     aria-expanded='false'
                     aria-label='Toggle navigation'>
-                    <span class='navbar-toggler-icon'></span>
+                    <span className='navbar-toggler-icon'></span>
                 </button>
 
                 <div
-                    class='collapse navbar-collapse'
+                    className='collapse navbar-collapse'
                     id='navbarSupportedContent'>
-                    <ul class='navbar-nav ml-auto'>
+                    <ul className='navbar-nav ml-auto'>
                         <Link to='/HTML'>HTML</Link>
                         <Link to='/CSS'>CSS</Link>
                         <Link to='/JS'>JS</Link>

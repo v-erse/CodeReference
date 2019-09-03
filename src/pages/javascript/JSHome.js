@@ -1,5 +1,4 @@
 import React from "react";
-import { VerticalNav } from "../../components/VerticalNav";
 import SplitPage from "../../components/SplitPage";
 import ReactMarkdown from "react-markdown";
 import CodeBlock from "../../components/CodeBlock";
