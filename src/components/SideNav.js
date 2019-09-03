@@ -1,7 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 export function SNavLink(props) {
     const [highlighted, setHighlighted] = useState(false);
+    const [inView, setView] = useState(false);
+    const id = props.toId || props.children.trim();
+    const idLink = "#" + id;
+
+    useEffect(() => {
+        function checkInView() {
+            const rect = document.getElementById(id).getBoundingClientRect();
+            setView(rect.top >= 0 && rect.bottom <= window.innerHeight);
+        }
+
+        checkInView();
+
+        window.addEventListener("scroll", checkInView);
+
+        return function cleanUp() {
+            window.removeEventListener("scroll", checkInView);
+        };
+    });
 
     function handleMouseEnter() {
         setHighlighted(true);
@@ -12,15 +30,15 @@ export function SNavLink(props) {
     }
 
     function handleClick() {
-        console.log(props.to);
+        document.getElementById(id).scrollIntoView({
+            behavior: "smooth"
+        });
     }
 
     let styles = { color: "#D6D6D6", whiteSpace: "pre" };
-    if (highlighted || props.active) {
+    if (highlighted || inView) {
         styles.color = "#A0A0A0";
     }
-
-    let linkTo = props.to || "#" + props.children.trim();
 
     return (
         <li
@@ -28,7 +46,7 @@ export function SNavLink(props) {
             onMouseLeave={handleMouseLeave}
             onClick={handleClick}
             style={styles}>
-            <a href={linkTo}>{props.children}</a>
+            {props.children}
         </li>
     );
 }
@@ -38,7 +56,7 @@ export function SideNav(props) {
         <div className='sideNav'>
             <ul>
                 {props.items.map((item) => {
-                    return <SNavLink>{item}</SNavLink>;
+                    return <SNavLink key={item}>{item}</SNavLink>;
                 })}
             </ul>
         </div>

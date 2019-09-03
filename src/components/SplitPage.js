@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { SideNav, SNavLink } from "./SideNav";
+import React from "react";
+import SideNav from "./SideNav";
 
 export function SplitPage(props) {
     const editedChildren = React.Children.map(props.children, (child) => {
