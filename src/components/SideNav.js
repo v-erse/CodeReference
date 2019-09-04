@@ -2,24 +2,8 @@ import React, { useState, useEffect } from "react";
 
 export function SNavLink(props) {
     const [highlighted, setHighlighted] = useState(false);
-    const [inView, setView] = useState(false);
     const id = props.toId || props.children.trim();
     const idLink = "#" + id;
-
-    useEffect(() => {
-        function checkInView() {
-            const rect = document.getElementById(id).getBoundingClientRect();
-            setView(rect.top >= 0 && rect.bottom <= window.innerHeight);
-        }
-
-        checkInView();
-
-        window.addEventListener("scroll", checkInView);
-
-        return function cleanUp() {
-            window.removeEventListener("scroll", checkInView);
-        };
-    });
 
     function handleMouseEnter() {
         setHighlighted(true);
@@ -36,7 +20,9 @@ export function SNavLink(props) {
     }
 
     let styles = { color: "#D6D6D6", whiteSpace: "pre" };
-    if (highlighted || inView) {
+    if (highlighted) {
+        styles.color = "#707070";
+    } else if (props.inView === id) {
         styles.color = "#A0A0A0";
     }
 
@@ -57,7 +43,11 @@ export function SideNav(props) {
             <ul>
                 {props.items
                     ? props.items.map((item) => {
-                          return <SNavLink key={item}>{item}</SNavLink>;
+                          return (
+                              <SNavLink key={item} inView={props.inView}>
+                                  {item}
+                              </SNavLink>
+                          );
                       })
                     : ""}
             </ul>
