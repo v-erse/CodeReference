@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 export function SNavLink(props) {
     const [highlighted, setHighlighted] = useState(false);
     const id = props.toId || props.children.trim();
-    const idLink = "#" + id;
 
     function handleMouseEnter() {
         setHighlighted(true);

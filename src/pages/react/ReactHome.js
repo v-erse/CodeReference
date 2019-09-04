@@ -1,7 +1,6 @@
 import React from "react";
 import SplitPage from "../../components/SplitPage";
 import CodeBlock from "../../components/CodeBlock";
-import ReactMarkdown from "react-markdown";
 
 const code = `
 function CodeBlock(props) {
