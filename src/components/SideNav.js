@@ -55,9 +55,11 @@ export function SideNav(props) {
     return (
         <div className='sideNav'>
             <ul>
-                {props.items.map((item) => {
-                    return <SNavLink key={item}>{item}</SNavLink>;
-                })}
+                {props.items
+                    ? props.items.map((item) => {
+                          return <SNavLink key={item}>{item}</SNavLink>;
+                      })
+                    : ""}
             </ul>
         </div>
     );

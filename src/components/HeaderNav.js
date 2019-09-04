@@ -19,7 +19,7 @@ class HeaderNav extends React.Component {
         return (
             <nav className='navbar navbar-expand-lg navbar-dark'>
                 <span className='navbar-brand'>
-                    <NavLink to='/'>Web Dev Cheatsheet</NavLink>
+                    <NavLink to='/'>Code Reference</NavLink>
                 </span>
                 <button
                     className='navbar-toggler'
@@ -42,6 +42,8 @@ class HeaderNav extends React.Component {
                         <Link to='/node'>Node</Link>
                         <Link to='/react'>React</Link>
                         <Link to='/back-end'>Back-end</Link>
+                        <Link to='/design'>Design</Link>
+                        <Link to='/design'>Algorithms</Link>
                         <Link to='/deployment'>Deployment</Link>
                     </ul>
                 </div>
