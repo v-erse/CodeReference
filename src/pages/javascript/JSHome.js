@@ -1,7 +1,6 @@
 import React from "react";
 import SplitPage from "../../components/SplitPage";
 import CodeBlock from "../../components/CodeBlock";
-import Markdown from "markdown-to-jsx";
 
 // const md = `
 // # struggling
@@ -38,16 +37,8 @@ import Markdown from "markdown-to-jsx";
 export default function JSHome() {
     return (
         <SplitPage withSideNav>
-            {/* <Markdown
-                children={"# doesn't work very well"}
-                options={{
-                    overrides: {
-                        code: {
-                            component: CodeBlock
-                        }
-                    }
-                }}></Markdown> */}
             <h1>doesn't work very well</h1>
+            <CodeBlock>asdadasd</CodeBlock>
         </SplitPage>
     );
 }
