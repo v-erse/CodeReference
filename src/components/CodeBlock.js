@@ -12,10 +12,10 @@ const customStyles = {
 export default function CodeBlock(props) {
     return (
         <SyntaxHighlighter
-            language='jsx'
+            language={props.language}
             style={tomorrow}
             customStyle={customStyles}>
-            {props.children.trim()}
+            {props.value.trim()}
         </SyntaxHighlighter>
     );
 }

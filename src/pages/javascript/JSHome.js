@@ -1,44 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import SplitPage from "../../components/SplitPage";
 import CodeBlock from "../../components/CodeBlock";
+import ReactMarkdown from "react-markdown";
 
-// const md = `
-// # struggling
-
-// To remain relevant
-
-// # a warrior
-
-// ## struggling
-
-// To remain consequential
-
-// # Lorem
-
-// ## ipsum
-
-// <div>
-
-// </div>
-
-// Repudiandae voluptatibus, placeat illum eos quod a? Esse nam excepturi molestias obcaecati. Quas itaque eligendi facere, doloribus quis omnis officiis alias tenetur.
-// Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae voluptatibus, placeat illum eos quod a? Esse nam excepturi molestias obcaecati. Quas itaque eligendi facere, doloribus quis omnis officiis alias tenetur.
-// Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae voluptatibus, placeat illum eos quod a? Esse nam excepturi molestias obcaecati. Quas itaque eligendi facere, doloribus quis omnis officiis alias tenetur.
-// Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae voluptatibus, placeat illum eos quod a? Esse nam excepturi molestias obcaecati. Quas itaque eligendi facere, doloribus quis omnis officiis alias tenetur.
-
-// # PNEUMA
-
-// Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae voluptatibus, placeat illum eos quod a? Esse nam excepturi molestias obcaecati. Quas itaque eligendi facere, doloribus quis omnis officiis alias tenetur.
-// Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae voluptatibus, placeat illum eos quod a? Esse nam excepturi molestias obcaecati. Quas itaque eligendi facere, doloribus quis omnis officiis alias tenetur.
-// Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae voluptatibus, placeat illum eos quod a? Esse nam excepturi molestias obcaecati. Quas itaque eligendi facere, doloribus quis omnis officiis alias tenetur.
-// Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae voluptatibus, placeat illum eos quod a? Esse nam excepturi molestias obcaecati. Quas itaque eligendi facere, doloribus quis omnis officiis alias tenetur.
-// `;
+import mrkdwn from "./JSHome.md";
 
 export default function JSHome() {
+    const [content, setContent] = useState("");
+
+    useEffect(() => {
+        fetch(mrkdwn)
+            .then((response) => response.text())
+            .then((text) => {
+                setContent(text);
+            });
+    });
+
     return (
         <SplitPage withSideNav>
             <h1>doesn't work very well</h1>
-            <CodeBlock>asdadasd</CodeBlock>
+            <CodeBlock value='asdasd' />
+            <ReactMarkdown source={content} renderers={{ code: CodeBlock }} />
         </SplitPage>
     );
 }
