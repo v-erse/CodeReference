@@ -5,7 +5,7 @@ import ReactMarkdown from "react-markdown";
 
 import mrkdwn from "./JSHome.md";
 
-export default function JSHome() {
+export default function JSHome(props) {
     const [content, setContent] = useState("");
 
     useEffect(() => {

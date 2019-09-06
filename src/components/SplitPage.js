@@ -1,18 +1,28 @@
 import React, { useState, useEffect } from "react";
 import SideNav from "./SideNav";
+import ReactMarkdown from "react-markdown";
 
 export function SplitPage(props) {
-    const editedChildren = React.Children.map(props.children, (child) => {
-        let items = [];
-        if (child.type === "h1" || child.type === "h2") {
-            child = React.cloneElement(child, { id: child.props.children });
-        }
-        items.push(child);
-        return items;
-    });
+    const [inView, setInView] = useState("");
+    const [newChildren, setNewChildren] = useState([]);
+    const [sNavItems, setSNavItems] = useState([]);
 
-    const sideNavItems =
-        React.Children.map(props.children, (child) => {
+    const editChildren = () => {
+        const editedChildren = React.Children.map(props.children, (child) => {
+            let items = [];
+            if (child.type === "h1" || child.type === "h2") {
+                child = React.cloneElement(child, { id: child.props.children });
+            } else if (child.type === ReactMarkdown) {
+                console.log("one React markdown comp");
+            }
+            items.push(child);
+            return items;
+        });
+        return editedChildren;
+    };
+
+    const getSideNavItems = () => {
+        const sideNavs = React.Children.map(props.children, (child) => {
             let items = [];
             if (child.type === "h1") {
                 items.push(child.props.children);
@@ -20,16 +30,22 @@ export function SplitPage(props) {
                 items.push("    " + child.props.children);
             }
             return items;
-        }) || "";
-
-    const [inView, setInView] = useState("");
-    const headerIds = sideNavItems
-        ? sideNavItems.map((item) => {
-              return item.trim();
-          })
-        : "";
+        });
+        return sideNavs || "";
+    };
 
     useEffect(() => {
+        setNewChildren(editChildren);
+        setSNavItems(getSideNavItems);
+    }, [props.children]);
+
+    useEffect(() => {
+        const headerIds = sNavItems
+            ? sNavItems.map((item) => {
+                  return item.trim();
+              })
+            : "";
+
         if (headerIds) {
             function checkInView() {
                 headerIds.some((id) => {
@@ -38,7 +54,6 @@ export function SplitPage(props) {
                         .getBoundingClientRect();
                     if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
                         setInView(id);
-                        console.log(id);
                         return true;
                     }
                     return false;
@@ -58,10 +73,10 @@ export function SplitPage(props) {
     return (
         <div className='splitPage'>
             <div className='splitPageLeft'>{props.left}</div>
-            <div className='splitPageMiddle'>{editedChildren}</div>
+            <div className='splitPageMiddle'>{newChildren}</div>
             <div className='splitPageRight'>
                 {props.withSideNav ? (
-                    <SideNav items={sideNavItems} inView={inView} />
+                    <SideNav items={sNavItems} inView={inView} />
                 ) : (
                     props.right
                 )}

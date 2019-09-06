@@ -33,7 +33,7 @@ export function ReactHome() {
                 cum tempora necessitatibus aspernatur perferendis est molestiae!
                 Commodi odio
             </p>
-            <CodeBlock>{code}</CodeBlock>
+            <CodeBlock value={code} />
             <p>
                 doloribus adipisci. Voluptatum hic nihil, accusantium ab,
                 facilis labore explicabo dicta sit inventore, dolor qui. Vel
@@ -46,7 +46,7 @@ export function ReactHome() {
                 vitae odio quos, harum quidem libero tempora cupiditate ratione
                 quo sequi assumenda. Doloremque sint
             </p>
-            <CodeBlock>{code}</CodeBlock>
+            <CodeBlock value={code} />
             <p>
                 nihil deleniti veniam. Nisi vel eveniet esse saepe, tenetur
                 itaque, ratione maxime voluptate expedita qui molestiae quos
@@ -60,7 +60,7 @@ export function ReactHome() {
                 assumenda optio, atque quasi eveniet voluptatum temporibus quae
                 similique nesciunt, ratione
             </p>
-            <CodeBlock>{code}</CodeBlock>
+            <CodeBlock value={code} />
             <p>
                 laborum incidunt id obcaecati quibusdam? Quam facere odio
                 placeat dolores pariatur illum necessitatibus ullam id,

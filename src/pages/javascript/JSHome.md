@@ -23,7 +23,7 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae voluptatibu
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae voluptatibus, placeat illum eos quod a? Esse nam excepturi molestias obcaecati. Quas itaque eligendi facere, doloribus quis omnis officiis alias tenetur.
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae voluptatibus, placeat illum eos quod a? Esse nam excepturi molestias obcaecati. Quas itaque eligendi facere, doloribus quis omnis officiis alias tenetur.
 
-# PNEUMA
+# Pneuma
 
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae voluptatibus, placeat illum eos quod a? Esse nam excepturi molestias obcaecati. Quas itaque eligendi facere, doloribus quis omnis officiis alias tenetur.
 Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae voluptatibus, placeat illum eos quod a? Esse nam excepturi molestias obcaecati. Quas itaque eligendi facere, doloribus quis omnis officiis alias tenetur.
