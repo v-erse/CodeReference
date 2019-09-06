@@ -34,7 +34,7 @@ function HeaderNav(props) {
                 <ul className='navbar-nav ml-auto'>
                     <NavLink to='/HTML'>HTML</NavLink>
                     <NavLink to='/CSS'>CSS</NavLink>
-                    <NavLink to='/JavaScript'>JS</NavLink>
+                    <NavLink to='/javascript'>JS</NavLink>
                     <NavLink to='/node'>Node</NavLink>
                     <NavLink to='/react'>React</NavLink>
                     <NavLink to='/back-end'>Back-end</NavLink>
