@@ -12,8 +12,6 @@ export function SplitPage(props) {
             let items = [];
             if (child.type === "h1" || child.type === "h2") {
                 child = React.cloneElement(child, { id: child.props.children });
-            } else if (child.type === ReactMarkdown) {
-                console.log("one React markdown comp");
             }
             items.push(child);
             return items;

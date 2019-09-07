@@ -11,11 +11,13 @@ const customStyles = {
 
 export default function CodeBlock(props) {
     return (
-        <SyntaxHighlighter
-            language={props.language}
-            style={tomorrow}
-            customStyle={customStyles}>
-            {props.value.trim()}
-        </SyntaxHighlighter>
+        // <SyntaxHighlighter
+        //     language={props.language}
+        //     style={tomorrow}
+        //     customStyle={customStyles}>
+        <pre style={customStyles}>
+            <code>{props.children}</code>
+        </pre>
+        // </SyntaxHighlighter>
     );
 }
