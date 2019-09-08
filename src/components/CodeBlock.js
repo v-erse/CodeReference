@@ -1,6 +1,4 @@
 import React from "react";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { tomorrow } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 const customStyles = {
     backgroundColor: "#111122",
@@ -11,13 +9,8 @@ const customStyles = {
 
 export default function CodeBlock(props) {
     return (
-        // <SyntaxHighlighter
-        //     language={props.language}
-        //     style={tomorrow}
-        //     customStyle={customStyles}>
         <pre style={customStyles}>
             <code>{props.children}</code>
         </pre>
-        // </SyntaxHighlighter>
     );
 }

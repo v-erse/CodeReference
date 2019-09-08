@@ -43,7 +43,8 @@ class HeaderNav extends React.Component {
                         <Link to='/react'>React</Link>
                         <Link to='/back-end'>Back-end</Link>
                         <Link to='/design'>Design</Link>
-                        <Link to='/design'>Algorithms</Link>
+                        <Link to='/algorithms'>Algorithms</Link>
+                        <Link to='/optimization'>Optimization</Link>
                         <Link to='/deployment'>Deployment</Link>
                     </ul>
                 </div>
