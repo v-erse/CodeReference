@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 export function SNavLink(props) {
     const [highlighted, setHighlighted] = useState(false);
-    const id = props.toId || props.children.trim();
+    const id = props.toId || props.headerId;
+    const node = document.getElementById(id);
 
     function handleMouseEnter() {
         setHighlighted(true);
@@ -13,7 +14,7 @@ export function SNavLink(props) {
     }
 
     function handleClick() {
-        document.getElementById(id).scrollIntoView({
+        node.scrollIntoView({
             behavior: "smooth"
         });
     }
@@ -31,21 +32,51 @@ export function SNavLink(props) {
             onMouseLeave={handleMouseLeave}
             onClick={handleClick}
             style={styles}>
-            {props.children}
+            {node.nodeName === "H2" ? "    " + node.innerText : node.innerText}
         </li>
     );
 }
 
 export function SideNav(props) {
+    const [headers, setHeaders] = useState([]);
+    const [inView, setInView] = useState("");
+
+    useEffect(() => {
+        if (props.headerIds) {
+            function checkInView() {
+                props.headerIds.some((id) => {
+                    const rect = document
+                        .getElementById(id)
+                        .getBoundingClientRect();
+                    if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+                        setInView(id);
+                        return true;
+                    }
+                    return false;
+                });
+            }
+
+            checkInView();
+
+            window.addEventListener("scroll", checkInView);
+
+            return function cleanUp() {
+                window.removeEventListener("scroll", checkInView);
+            };
+        }
+    }, [props.headerIds]);
+
     return (
         <div className='sideNav'>
             <ul>
-                {props.items
-                    ? props.items.map((item) => {
+                {props.headerIds
+                    ? props.headerIds.map((id) => {
                           return (
-                              <SNavLink key={item} inView={props.inView}>
-                                  {item}
-                              </SNavLink>
+                              <SNavLink
+                                  key={id}
+                                  inView={inView}
+                                  headerId={id}
+                              />
                           );
                       })
                     : ""}

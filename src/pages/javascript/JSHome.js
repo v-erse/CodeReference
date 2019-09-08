@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import SplitPage from "../../components/SplitPage";
 import CodeBlock from "../../components/CodeBlock";
+import SideNav from "../../components/SideNav";
 
 import mrkdwn from "./JSHome.md";
 import unified from "unified";
@@ -31,10 +32,8 @@ export default function JSHome(props) {
         if (content.props) {
             let items = [];
             content.props.children.forEach((child) => {
-                if (child.type === "h1") {
+                if (child.type === "h1" || child.type === "h2") {
                     items.push(child.props.id);
-                } else if (child.type === "h2") {
-                    items.push("    " + child.props.id);
                 }
             });
             setHeaderIds([...items]);
@@ -54,7 +53,7 @@ export default function JSHome(props) {
     }, [content]);
 
     return (
-        <SplitPage withSideNav headerIds={headerIds}>
+        <SplitPage withSideNav right={<SideNav headerIds={headerIds} />}>
             {content}
         </SplitPage>
     );
