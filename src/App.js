@@ -1,10 +1,13 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
+import "./vs2015.css";
+
 import HeaderNav from "./components/HeaderNav";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Footer from "./components/Footer";
+
 import Home from "./pages/Home";
 import ReactHome from "./pages/react/ReactHome";
-import Footer from "./components/Footer";
 import JSHome from "./pages/javascript/JSHome";
 
 /**
@@ -24,8 +27,8 @@ function App() {
                     <Route path='/react' component={ReactHome} />
                     <Route path='/JS' component={JSHome} />
                 </Switch>
+                <Footer />
             </Router>
-            <Footer />
         </div>
     );
 }

@@ -14,16 +14,24 @@ export function SNavLink(props) {
     }
 
     function handleClick() {
-        node.scrollIntoView({
-            behavior: "smooth"
-        });
+        // let y = node.getBoundingClientRect().top - 5;
+        // window.scrollTo({
+        //     top: y,
+        //     behavior: "smooth"
+        // });
+        node.scrollIntoView({ behavior: "smooth" });
     }
 
-    let styles = { color: "#D6D6D6", whiteSpace: "pre" };
+    let styles = {
+        color: "#b8b8b8",
+        whiteSpace: "pre",
+        fontSize: "0.8rem",
+        fontWeight: "300"
+    };
     if (highlighted) {
-        styles.color = "#707070";
+        styles.color = "#404040";
     } else if (props.inView === id) {
-        styles.color = "#A0A0A0";
+        styles.color = "#707070";
     }
 
     return (
@@ -32,13 +40,12 @@ export function SNavLink(props) {
             onMouseLeave={handleMouseLeave}
             onClick={handleClick}
             style={styles}>
-            {node.nodeName === "H2" ? "    " + node.innerText : node.innerText}
+            {node.nodeName === "H1" ? node.innerText : "    " + node.innerText}
         </li>
     );
 }
 
 export function SideNav(props) {
-    const [headers, setHeaders] = useState([]);
     const [inView, setInView] = useState("");
 
     useEffect(() => {
@@ -48,7 +55,7 @@ export function SideNav(props) {
                     const rect = document
                         .getElementById(id)
                         .getBoundingClientRect();
-                    if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+                    if (rect.top >= -5 && rect.bottom <= window.innerHeight) {
                         setInView(id);
                         return true;
                     }

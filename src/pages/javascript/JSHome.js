@@ -10,7 +10,6 @@ import remark2rehype from "remark-rehype";
 import highlight from "rehype-highlight";
 import rehype2react from "rehype-react";
 import slug from "rehype-slug";
-import "../../tomorrow-hljs.css";
 
 export default function JSHome(props) {
     const [content, setContent] = useState("");
@@ -53,7 +52,7 @@ export default function JSHome(props) {
     }, [content]);
 
     return (
-        <SplitPage withSideNav right={<SideNav headerIds={headerIds} />}>
+        <SplitPage right={<SideNav headerIds={headerIds} />}>
             {content}
         </SplitPage>
     );
