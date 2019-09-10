@@ -40,11 +40,13 @@ export default function Layout(props) {
     };
 
     useEffect(() => {
-        fetch(props.markdown)
-            .then((response) => response.text())
-            .then((text) => {
-                setContent(processor.processSync(text).contents);
-            });
+        if (props.markdown) {
+            fetch(props.markdown)
+                .then((response) => response.text())
+                .then((text) => {
+                    setContent(processor.processSync(text).contents);
+                });
+        }
     }, []);
 
     useEffect(() => {
@@ -54,7 +56,7 @@ export default function Layout(props) {
     return (
         <SplitPage
             right={props.withSideNav ? <SideNav headerIds={headerIds} /> : ""}>
-            {content}
+            {props.markdown ? content : props.children}
         </SplitPage>
     );
 }

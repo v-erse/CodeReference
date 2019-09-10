@@ -146,6 +146,7 @@ code {
     position: absolute;
     bottom: 0;
     background-color: #111122;
+    /* background-color: gray; */
     height: 100px;
     width: 100%;
     display: grid;

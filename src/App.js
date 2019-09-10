@@ -7,7 +7,8 @@ import HeaderNav from "./components/HeaderNav";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Footer from "./components/Footer";
 
-import Home from "./pages/Home";
+import Home from "./pages/Home/Home";
+import Languages from "./pages/Languages/Languages";
 import ReactHome from "./pages/react/ReactHome";
 import JSHome from "./pages/javascript/JShome";
 
@@ -26,8 +27,9 @@ function App() {
                 <HeaderNav />
                 <Switch>
                     <Route exact path='/' component={Home} />
-                    <Route path='/react' component={ReactHome} />
-                    <Route path='/JS' component={JSHome} />
+                    <Route path='/Languages' component={Languages} />
+                    <Route path='/React' component={ReactHome} />
+                    <Route path='/JavaScript' component={JSHome} />
                 </Switch>
                 <Footer />
             </Router>
