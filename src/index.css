@@ -48,8 +48,12 @@ p {
 a,
 a:hover {
     text-decoration: none;
-    color: #e06c75;
     font-weight: 500;
+    color: #e06c75;
+}
+
+::selection {
+    background-color: rgba(150, 150, 150, 0.3);
 }
 
 pre {
@@ -69,9 +73,12 @@ code {
 .splitPage {
     flex: 1;
     display: grid;
-    /* grid-template-columns: 0.88fr 2fr 0.88fr; */
     grid-template-columns: 0.2fr 1.5fr 0.8fr;
     margin-bottom: 30px;
+}
+
+.splitPage a {
+    color: #61aeee;
 }
 
 @media only screen and (max-width: 992px) {
@@ -129,6 +136,10 @@ code {
     margin: 0;
     line-height: 210%;
     cursor: pointer;
+}
+
+.logo {
+    margin-right: 10px;
 }
 
 .footer {

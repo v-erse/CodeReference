@@ -19,7 +19,16 @@ class HeaderNav extends React.Component {
         return (
             <nav className='navbar navbar-expand-lg navbar-dark'>
                 <span className='navbar-brand'>
-                    <NavLink to='/'>Code Reference</NavLink>
+                    <NavLink to='/'>
+                        <img
+                            className='logo d-inline-block align-top'
+                            src='https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/320/twitter/214/abacus_1f9ee.png'
+                            width='30'
+                            height='30'
+                            alt=''
+                        />
+                        Code Reference
+                    </NavLink>
                 </span>
                 <button
                     className='navbar-toggler'
@@ -36,15 +45,11 @@ class HeaderNav extends React.Component {
                     className='collapse navbar-collapse'
                     id='navbarSupportedContent'>
                     <ul className='navbar-nav ml-auto'>
-                        <Link to='/HTML'>HTML</Link>
-                        <Link to='/CSS'>CSS</Link>
-                        <Link to='/JS'>JS</Link>
-                        <Link to='/node'>Node</Link>
-                        <Link to='/react'>React</Link>
+                        <Link to='/languages'>Languages</Link>
+                        <Link to='/react'>Front-end</Link>
                         <Link to='/back-end'>Back-end</Link>
                         <Link to='/design'>Design</Link>
                         <Link to='/algorithms'>Algorithms</Link>
-                        <Link to='/optimization'>Optimization</Link>
                         <Link to='/deployment'>Deployment</Link>
                     </ul>
                 </div>

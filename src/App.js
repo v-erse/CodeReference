@@ -1,6 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./vs2015.css";
+import Favicon from "react-favicon";
 
 import HeaderNav from "./components/HeaderNav";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -8,7 +9,7 @@ import Footer from "./components/Footer";
 
 import Home from "./pages/Home";
 import ReactHome from "./pages/react/ReactHome";
-import JSHome from "./pages/javascript/JSHome";
+import JSHome from "./pages/javascript/JShome";
 
 /**
  * Relevant links:
@@ -20,6 +21,7 @@ import JSHome from "./pages/javascript/JSHome";
 function App() {
     return (
         <div>
+            <Favicon url='https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/320/twitter/214/abacus_1f9ee.png' />
             <Router>
                 <HeaderNav />
                 <Switch>

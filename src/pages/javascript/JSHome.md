@@ -6,6 +6,8 @@
 
 [I'm an inline-style link](https://www.google.com)
 
+Check out this `code`
+
 ```html
 <div attr="this is an attribute">
     <h1>This is a header</h1>
@@ -18,26 +20,17 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 ```js
 import React from "react";
 
+// comment
 const MyComponents = {
     DatePicker: function DatePicker(props) {
         return <div>Imagine a {props.color} datepicker here.</div>;
     }
 };
 
-if (node.nodeName === "H1") {
-    styles.fontSize = "0.8rem";
-    styles.fontWeight = "500";
-} else {
-    styles.fontSize = "0.8rem";
-    styles.fontWeight = "300";
-}
-
 function BlueDatePicker() {
     return <MyComponents.DatePicker color='blue' />;
 }
 ```
-
----
 
 Nullam ac tortor vitae purus faucibus ornare suspendisse sed nisi. Sed augue lacus viverra vitae congue eu. Diam sollicitudin tempor id eu nisl nunc mi ipsum. Commodo odio aenean sed adipiscing diam donec adipiscing tristique risus. Sem et tortor consequat id porta. Rhoncus est pellentesque elit ullamcorper dignissim. Justo laoreet sit amet cursus sit amet dictum. Quis imperdiet massa tincidunt nunc. Fermentum odio eu feugiat pretium nibh ipsum consequat nisl. Ullamcorper malesuada proin libero nunc. Ac ut consequat semper viverra nam. Tristique sollicitudin nibh sit amet commodo nulla facilisi. Auctor augue mauris augue neque gravida in fermentum. Et leo duis ut diam quam nulla. Eget aliquet nibh praesent tristique magna sit amet. Placerat in egestas erat imperdiet sed euismod nisi porta lorem. Enim sed faucibus turpis in eu mi bibendum. Nulla facilisi cras fermentum odio eu feugiat pretium nibh ipsum. Eget mi proin sed libero enim sed faucibus.
 
