@@ -25,7 +25,15 @@ body,
 
 h1,
 h2 {
-    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+h1 + h2 {
+    margin-top: 1rem;
+}
+
+h1:nth-of-type(n + 2) {
+    margin-top: 3rem;
 }
 
 h1 {
@@ -37,12 +45,14 @@ h1 {
 h2 {
     font-size: 2rem;
     font-weight: 500;
+    margin-top: 2.5rem;
     /* line-height: 2.5rem; */
 }
 
 p {
     color: #303030;
     font-weight: 300;
+    margin-bottom: 1.5rem;
 }
 
 a,
@@ -79,6 +89,10 @@ code {
 
 .splitPage a {
     color: #61aeee;
+}
+
+.splitPage a:hover {
+    color: #218ae0;
 }
 
 @media only screen and (max-width: 992px) {
@@ -136,6 +150,18 @@ code {
     margin: 0;
     line-height: 210%;
     cursor: pointer;
+}
+
+.codeBlock {
+    background-color: #111122;
+    margin: 1.5rem -2.5rem;
+    padding: 1.5rem 2.5rem;
+}
+
+.codeBlock + .codeBlock {
+    /* background-color: #02023a; */
+    margin-top: -1.4rem;
+    padding: 1rem 2.5rem;
 }
 
 .logo {

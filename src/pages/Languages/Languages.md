@@ -7,6 +7,6 @@
 <!-- -   [HTML](/HTML)
 -   [CSS](/CSS) -->
 
--   [JavaScript](/JavaScript)
--   [TypeScript](/TypeScript)
+-   [JavaScript](/Languages/JavaScript)
+    <!-- -   [TypeScript](/TypeScript) -->
     <!-- -   [Python](/Python) -->

@@ -46,7 +46,7 @@ class HeaderNav extends React.Component {
                     id='navbarSupportedContent'>
                     <ul className='navbar-nav ml-auto'>
                         <Link to='/languages'>Languages</Link>
-                        <Link to='/react'>Front-end</Link>
+                        <Link to='/front-end'>Front-end</Link>
                         <Link to='/back-end'>Back-end</Link>
                         <Link to='/design'>Design</Link>
                         <Link to='/algorithms'>Algorithms</Link>

@@ -9,7 +9,7 @@ const customStyles = {
 
 export default function CodeBlock(props) {
     return (
-        <pre style={customStyles}>
+        <pre className='codeBlock'>
             <code>{props.children}</code>
         </pre>
     );

@@ -24,7 +24,6 @@ export function SNavLink(props) {
 
     let styles = {
         color: "#b8b8b8",
-        whiteSpace: "pre",
         fontSize: "0.8rem",
         fontWeight: "300"
     };
@@ -33,6 +32,9 @@ export function SNavLink(props) {
     } else if (props.inView === id) {
         styles.color = "#707070";
     }
+    if (node.nodeName === "H2") {
+        styles.marginLeft = "17px";
+    }
 
     return (
         <li
@@ -40,7 +42,7 @@ export function SNavLink(props) {
             onMouseLeave={handleMouseLeave}
             onClick={handleClick}
             style={styles}>
-            {node.nodeName === "H1" ? node.innerText : "    " + node.innerText}
+            {node.innerText}
         </li>
     );
 }
