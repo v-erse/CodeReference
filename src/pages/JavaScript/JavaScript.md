@@ -138,6 +138,21 @@ typeof true;
 >> "boolean"
 ```
 
+### Truthy and Falsy?
+
+All values in JavaScript will evaluate to `true` or `false` in a boolean context. The ones that evaluate to `true` are called _truthy_ values, and the ones that evaluate to `false` are _falsy_.
+
+All values are truthy unless defined as falsy. The values explicitly defined to be falsy are mostly those that _feel_ empty:
+
+-   `false`
+-   `undefined`
+-   `null`
+-   `0`
+-   `NaN`
+-   `""` (an empty string)
+
+Note that the empty array, `[]` or object, `{}` aren't in this list.
+
 ## Type Conversion
 
 ---
@@ -170,21 +185,6 @@ Explicit conversion to Boolean type can be achieved with the `Boolean()` functio
 Boolean("non-empty string"); // >> true
 !!"non-empty string"; // >> true
 ```
-
-### Truthy and Falsy?
-
-All values in JavaScript will evaluate to `true` or `false` in a boolean context. The ones that evaluate to `true` are called _truthy_ values, and the ones that evaluate to `false` are _falsy_.
-
-All values are truthy unless defined as falsy. The values explicitly defined to be falsy are mostly those that _feel_ empty:
-
--   `false`
--   `undefined`
--   `null`
--   `0`
--   `NaN`
--   `""` (an empty string)
-
-Note that the empty array, `[]` or object, `{}` aren't in this list.
 
 ## Operators
 
