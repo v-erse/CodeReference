@@ -80,7 +80,7 @@ The convention for naming JavaScript variables is of course camel casing.
 let myVariable = "my value";
 ```
 
-With `let` and `var` we can also declare variables without initialising them. These variables will be assigned the value `undefined` in the meantime.
+With `let` and `var` we can also declare variables without initializing them. These variables will be assigned the value `undefined` in the meantime.
 
 ```js
 let myVariable;
@@ -126,7 +126,7 @@ MY_OBJECT.key = "otherValue";
     -   Symbol: A type whose instances are unique and immutable.
 -   and Object
 
-While it's useful to know about these types, you won't usually be worrying about them because JavaScript is **dynamically-typed**. You can declare and initialize a variable without having to specifying type. Types will automatically be converted as needed during execution.
+While it's useful to know about these types, you won't usually be worrying about them because JavaScript is **dynamically-typed**. You can declare and initialize a variable without having to specify type. Types will automatically be converted as needed during execution.
 
 Use the `typeof` operator to get the type of value:
 
@@ -140,7 +140,7 @@ typeof true;
 
 ### Truthy and Falsy?
 
-All values in JavaScript will evaluate to `true` or `false` in a boolean context. The ones that evaluate to `true` are called _truthy_ values, and the ones that evaluate to `false` are _falsy_.
+All values in JavaScript will evaluate to `true` or `false` in a Boolean context. The ones that evaluate to `true` are called _truthy_ values, and the ones that evaluate to `false` are _falsy_.
 
 All values are truthy unless defined as falsy. The values explicitly defined to be falsy are mostly those that _feel_ empty:
 
