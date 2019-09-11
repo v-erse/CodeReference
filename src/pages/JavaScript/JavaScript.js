@@ -1,7 +1,7 @@
 import React from "react";
 import Layout from "../../components/Layout";
-import mrkdwn from "./JSHome.md";
+import mrkdwn from "./JavaScript.md";
 
-export default function JShome() {
+export default function JavaScript() {
     return <Layout withSideNav markdown={mrkdwn} />;
 }

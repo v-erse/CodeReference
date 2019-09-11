@@ -14,12 +14,14 @@ export function SNavLink(props) {
     }
 
     function handleClick() {
-        // let y = node.getBoundingClientRect().top - 5;
-        // window.scrollTo({
-        //     top: y,
-        //     behavior: "smooth"
-        // });
-        node.scrollIntoView({ behavior: "smooth" });
+        let parentTop = document.getElementById("root").getBoundingClientRect()
+            .top;
+        let y = node.getBoundingClientRect().top - parentTop;
+        console.log(y);
+        window.scrollTo({
+            top: y - 15,
+            behavior: "smooth"
+        });
     }
 
     let styles = {
@@ -34,6 +36,8 @@ export function SNavLink(props) {
     }
     if (node.nodeName === "H2") {
         styles.marginLeft = "17px";
+    } else if (node.nodeName === "H3") {
+        styles.marginLeft = "34px";
     }
 
     return (

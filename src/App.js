@@ -10,7 +10,7 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home/Home";
 import Languages from "./pages/Languages/Languages";
 import ReactHome from "./pages/react/ReactHome";
-import JSHome from "./pages/Javascript/JShome";
+import JavaScript from "./pages/JavaScript/JavaScript";
 
 /**
  * Relevant links:
@@ -32,7 +32,7 @@ function App() {
                     <Route
                         exact
                         path='/Languages/JavaScript'
-                        component={JSHome}
+                        component={JavaScript}
                     />
                 </Switch>
                 <Footer />

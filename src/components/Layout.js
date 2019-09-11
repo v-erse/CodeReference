@@ -31,7 +31,11 @@ export default function Layout(props) {
         if (content.props) {
             let items = [];
             content.props.children.forEach((child) => {
-                if (child.type === "h1" || child.type === "h2") {
+                if (
+                    child.type === "h1" ||
+                    child.type === "h2" ||
+                    child.type === "h3"
+                ) {
                     items.push(child.props.id);
                 }
             });
