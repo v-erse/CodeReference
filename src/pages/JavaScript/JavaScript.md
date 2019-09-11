@@ -6,7 +6,7 @@
 
 JavaScript is the Web's own programming language.
 
-It was created by Brendan Eich in 1995, at the time working at Netscape Communications. Netscape worked with Sun Microsystems to include their language, _Java_ in Netscape Navigator, a web browser built to compete with Internet Explorer.
+It was created by Brendan Eich in 1995, at the time working at Netscape Communications. Netscape worked with Sun Microsystems to integrate their language, _Java_, into Netscape Navigator, a web browser built to compete with Internet Explorer.
 
 Marc Andreessen (Netscape founder) thought HTML needed a "glue language" that made web pages more interactive and dynamic. Brendan Eich was hired to create it. Because it was working alongside Java in Netscape Navigator, they decided to call it JavaScript.
 
@@ -18,7 +18,7 @@ Since then, JavaScript has become more than a tool for interaction. It is now us
 
 ---
 
-After Brendan Eich created JavaScript, it was presented by Netscape to Ecma International, who standardized it and made a specification called ECMA-262, a.k.a. ECMAScript.
+After Brendan Eich created JavaScript, it was presented by Netscape to ECMA International, who standardized it and made a specification called ECMA-262, a.k.a. ECMAScript.
 
 It was made into a standard scripting language so that new languages could be built on top of it. The JavaScript we know today is one of those languages, a dialect of ECMAScript.
 
@@ -144,7 +144,7 @@ typeof true;
 
 There are a few different ways to convert between types in JavaScript. Types can be _converted_ which is the word used to describe explicit or implicit conversion, or _coerced_ which is the word used to describe only implicit conversion. _Coercion_ is when a value automatically converts type because of the context of the code.
 
-### To Strings
+### To String
 
 Explicit conversion to String type can be achieved with the `String()` function, implicit coercion can be triggered by the binary `+` operator:
 
@@ -153,7 +153,7 @@ String(115); // >> "115"
 115 + ""; // >> "115"
 ```
 
-### To Numbers
+### To Number
 
 Explicit conversion to Number type can be achieved with the `Number()` function, implicit coercion can be triggered by using the _unary_ `+` operator:
 
@@ -162,7 +162,7 @@ Number("115"); // >> 115
 +"115"; // >> 115
 ```
 
-### To Booleans
+### To Boolean
 
 Explicit conversion to Boolean type can be achieved with the `Boolean()` function, implicit coercion can be triggered by using the logical operator `!` twice (this works because one `!` will turn a truthy value to `false` or a falsy value to `true`):
 
