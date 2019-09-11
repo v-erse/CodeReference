@@ -77,10 +77,6 @@ a:hover {
     background-color: rgba(150, 150, 150, 0.3);
 }
 
-pre {
-    white-space: pre-wrap;
-}
-
 code {
     font-family: "Fira Mono", Menlo, Monaco, Consolas, Courier New, monospace;
     font-weight: 400;
@@ -137,7 +133,6 @@ code {
 .sideNav {
     position: sticky;
     top: 1.25rem;
-    /* font-size: 0.8rem; */
 }
 
 .sideNav ul {
@@ -146,6 +141,7 @@ code {
 
 .sideNav ul,
 .sideNav li {
+    font-size: 0.8rem;
     list-style: none;
     margin: 0;
     line-height: 210%;
@@ -159,9 +155,9 @@ code {
 }
 
 .codeBlock + .codeBlock {
-    /* background-color: #02023a; */
     margin-top: -1.4rem;
-    padding: 1rem 2.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 
 .logo {
@@ -172,7 +168,6 @@ code {
     position: absolute;
     bottom: 0;
     background-color: #111122;
-    /* background-color: gray; */
     height: 100px;
     width: 100%;
     display: grid;
@@ -187,6 +182,10 @@ code {
     text-decoration: underline;
 }
 
+.contentsLabel {
+    display: none;
+}
+
 @media only screen and (max-width: 992px) {
     .splitPage {
         grid-template-columns: 0fr 2fr 1fr;
@@ -195,16 +194,49 @@ code {
 
 @media only screen and (max-width: 600px) {
     .splitPage {
-        grid-template-columns: 0fr 2fr 0fr;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 0px;
+        overflow: hidden;
     }
 
-    .splitPageLeft,
+    .navbar {
+        width: 100%;
+    }
+
+    .sideNav {
+        position: static;
+        width: 100%;
+        margin: 1rem 1.5rem;
+    }
+
+    .sideNav li {
+        font-size: 0.9rem;
+    }
+
     .splitPageRight {
-        display: none;
+        order: 0;
+        margin-bottom: 0px;
+        padding: 0;
+    }
+
+    .contentsLabel {
+        display: block;
+        font-size: 1.2rem;
     }
 
     .splitPageMiddle {
+        order: 1;
         padding: 1.5rem 1.2rem;
+    }
+
+    .codeBlock {
+        margin: 1rem -1.2rem 1.5rem -1.2rem;
+        padding: 1.5rem 1.2rem;
+    }
+
+    .splitPageLeft {
+        display: none;
     }
 
     h1 {

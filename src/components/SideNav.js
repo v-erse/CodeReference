@@ -26,7 +26,6 @@ export function SNavLink(props) {
 
     let styles = {
         color: "#b8b8b8",
-        fontSize: "0.8rem",
         fontWeight: "300"
     };
     if (highlighted) {
@@ -81,6 +80,7 @@ export function SideNav(props) {
 
     return (
         <div className='sideNav'>
+            <label className='contentsLabel'>Contents</label>
             <ul>
                 {props.headerIds
                     ? props.headerIds.map((id) => {
