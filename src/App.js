@@ -29,11 +29,7 @@ function App() {
                     <Route exact path='/' component={Home} />
                     <Route exact path='/Languages' component={Languages} />
                     <Route exact path='/React' component={ReactHome} />
-                    <Route
-                        exact
-                        path='/Languages/JavaScript'
-                        component={JavaScript}
-                    />
+                    <Route exact path='/JavaScript' component={JavaScript} />
                 </Switch>
                 <Footer />
             </Router>
