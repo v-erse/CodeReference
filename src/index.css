@@ -202,16 +202,27 @@ input#sideNavContents {
 }
 
 @media only screen and (max-width: 600px) {
+    .sideNav {
+        position: static;
+        width: 100%;
+        margin: 1rem 1.5rem;
+    }
+
+    .sideNav li {
+        font-size: 0.9rem;
+    }
+
     .sideNav label {
         display: block;
         cursor: pointer;
         margin-bottom: 0;
+        color: #e06c75;
     }
 
     .sideNavContent {
         max-height: 0;
         overflow: hidden;
-        transition: max-height 0.5s ease-out;
+        transition: max-height 0.5s ease;
     }
 
     input:checked ~ .sideNavContent {
@@ -227,16 +238,6 @@ input#sideNavContents {
 
     .navbar {
         width: 100%;
-    }
-
-    .sideNav {
-        position: static;
-        width: 100%;
-        margin: 1rem 1.5rem;
-    }
-
-    .sideNav li {
-        font-size: 0.9rem;
     }
 
     .splitPageRight {

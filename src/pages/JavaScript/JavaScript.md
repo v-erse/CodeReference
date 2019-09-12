@@ -142,7 +142,7 @@ typeof true;
 
 All values in JavaScript will evaluate to `true` or `false` in a Boolean context. The ones that evaluate to `true` are called _truthy_ values, and the ones that evaluate to `false` are _falsy_.
 
-All values are truthy unless defined as falsy. The values explicitly defined to be falsy are mostly those that _feel_ empty:
+All values are truthy unless defined as falsy. The values explicitly defined to be falsy are:
 
 -   `false`
 -   `undefined`
@@ -151,7 +151,7 @@ All values are truthy unless defined as falsy. The values explicitly defined to 
 -   `NaN`
 -   `""` (an empty string)
 
-Note that the empty array, `[]` or object, `{}` aren't in this list.
+All of these values seem to have a _feeling_ of emptiness in common, but note that the empty array, `[]` or object, `{}` aren't in this list.
 
 ## Type Conversion
 

@@ -82,7 +82,6 @@ export function SideNav(props) {
         <div className='sideNav'>
             <input type='checkbox' id='sideNavContents' />
             <label htmlFor='sideNavContents'>Contents</label>
-            {/* <div> */}
             <ul className='sideNavContent'>
                 {props.headerIds
                     ? props.headerIds.map((id) => {
@@ -96,7 +95,6 @@ export function SideNav(props) {
                       })
                     : ""}
             </ul>
-            {/* </div> */}
         </div>
     );
 }
