@@ -80,17 +80,10 @@ export function SideNav(props) {
 
     return (
         <div className='sideNav'>
-            {/* <button
-                class='btn btn-link contentsLabel'
-                type='button'
-                data-toggle='collapse'
-                data-target='#collapseExample'
-                aria-expanded='false'
-                aria-controls='collapseExample'>
-                Contents
-            </button>
-            <div className='collapse' id='collapseExample'> */}
-            <ul>
+            <input type='checkbox' id='sideNavContents' />
+            <label htmlFor='sideNavContents'>Contents</label>
+            {/* <div> */}
+            <ul className='sideNavContent'>
                 {props.headerIds
                     ? props.headerIds.map((id) => {
                           return (

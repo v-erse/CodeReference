@@ -149,12 +149,13 @@ code {
 }
 
 .codeBlock {
-    background-color: #111122;
+    background-color: #111122e0;
     margin: 1rem -2.5rem 1.5rem -2.5rem;
     padding: 1.5rem 2.5rem;
 }
 
 .codeBlock + .codeBlock {
+    background-color: #111122;
     margin-top: -1.4rem;
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -163,20 +164,6 @@ code {
 .logo {
     margin-right: 10px;
 }
-
-/* .btn-link {
-    display: block;
-    font-size: 1.2rem;
-    padding: 0;
-    margin: 0;
-    color: #e06c75;
-    text-decoration: none;
-}
-
-.btn-link:hover {
-    color: #e06c75;
-    text-decoration: none;
-} */
 
 .footer {
     position: absolute;
@@ -196,8 +183,16 @@ code {
     text-decoration: underline;
 }
 
-.contentsLabel {
+input#sideNavContents {
     display: none;
+}
+
+.sideNav label {
+    display: none;
+}
+
+.sideNavContent {
+    max-height: 100%;
 }
 
 @media only screen and (max-width: 992px) {
@@ -207,6 +202,22 @@ code {
 }
 
 @media only screen and (max-width: 600px) {
+    .sideNav label {
+        display: block;
+        cursor: pointer;
+        margin-bottom: 0;
+    }
+
+    .sideNavContent {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease-out;
+    }
+
+    input:checked ~ .sideNavContent {
+        max-height: 100vh;
+    }
+
     .splitPage {
         display: flex;
         flex-direction: column;
@@ -264,17 +275,3 @@ code {
         font-size: 1rem;
     }
 }
-
-/* .btn-link {
-    display: block;
-    font-size: 1.2rem;
-    padding: 0;
-    margin: 0;
-    color: #e06c75;
-    text-decoration: none;
-}
-
-.btn-link:hover {
-    color: #e06c75;
-    text-decoration: none;
-} */
