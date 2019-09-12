@@ -164,6 +164,20 @@ code {
     margin-right: 10px;
 }
 
+/* .btn-link {
+    display: block;
+    font-size: 1.2rem;
+    padding: 0;
+    margin: 0;
+    color: #e06c75;
+    text-decoration: none;
+}
+
+.btn-link:hover {
+    color: #e06c75;
+    text-decoration: none;
+} */
+
 .footer {
     position: absolute;
     bottom: 0;
@@ -220,11 +234,6 @@ code {
         padding: 0;
     }
 
-    .contentsLabel {
-        display: block;
-        font-size: 1.2rem;
-    }
-
     .splitPageMiddle {
         order: 1;
         padding: 1.5rem 1.2rem;
@@ -255,3 +264,17 @@ code {
         font-size: 1rem;
     }
 }
+
+/* .btn-link {
+    display: block;
+    font-size: 1.2rem;
+    padding: 0;
+    margin: 0;
+    color: #e06c75;
+    text-decoration: none;
+}
+
+.btn-link:hover {
+    color: #e06c75;
+    text-decoration: none;
+} */

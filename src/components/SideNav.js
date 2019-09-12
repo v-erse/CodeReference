@@ -80,7 +80,16 @@ export function SideNav(props) {
 
     return (
         <div className='sideNav'>
-            <label className='contentsLabel'>Contents</label>
+            {/* <button
+                class='btn btn-link contentsLabel'
+                type='button'
+                data-toggle='collapse'
+                data-target='#collapseExample'
+                aria-expanded='false'
+                aria-controls='collapseExample'>
+                Contents
+            </button>
+            <div className='collapse' id='collapseExample'> */}
             <ul>
                 {props.headerIds
                     ? props.headerIds.map((id) => {
@@ -94,6 +103,7 @@ export function SideNav(props) {
                       })
                     : ""}
             </ul>
+            {/* </div> */}
         </div>
     );
 }

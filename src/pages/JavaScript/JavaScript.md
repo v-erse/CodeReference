@@ -179,7 +179,7 @@ Number("115"); // >> 115
 
 ### To Boolean
 
-Explicit conversion to Boolean type can be achieved with the `Boolean()` function, implicit coercion can be triggered by using the logical operator `!` twice (this works because one `!` will turn a truthy value to `false` or a falsy value to `true`):
+Explicit conversion to Boolean type can be achieved with the `Boolean()` function, implicit coercion can be triggered by using the logical `!` operator twice (this works because one `!` will turn a truthy value to `false` or a falsy value to `true`):
 
 ```js
 Boolean("non-empty string"); // >> true

@@ -27,9 +27,13 @@ function App() {
                 <HeaderNav />
                 <Switch>
                     <Route exact path='/' component={Home} />
-                    <Route path='/languages' component={Languages} />
-                    <Route path='/react' component={ReactHome} />
-                    <Route path='/javascript' component={JavaScript} />
+                    <Route exact path='/languages' component={Languages} />
+                    <Route exact path='/react' component={ReactHome} />
+                    <Route
+                        exact
+                        path='/languages/javascript'
+                        component={JavaScript}
+                    />
                 </Switch>
                 <Footer />
             </Router>
