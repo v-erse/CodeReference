@@ -2,9 +2,8 @@ html,
 body,
 #root,
 .App {
-    position: absolute;
-    min-height: 100%;
-    min-width: 100%;
+    height: 100vh;
+    width: 100vw;
     margin: 0;
     padding: 0;
     font-family: "Work Sans", BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -13,16 +12,93 @@ body,
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: #3f3f3f;
-    /* line-height: 160%; */
     font-size: 1.05rem;
 }
 
-#root > div {
-    position: absolute;
-    min-height: 100%;
-    /* padding-bottom: 100px; */
+.navbar {
+    padding: 12px 20px;
+    background-color: #111122;
+    grid-area: header;
+}
+
+.splitPageRight {
+    margin-bottom: 0px;
+    padding: 0;
+    grid-area: splitRight;
+}
+
+.splitPageMiddle {
+    padding: 1.5rem 1.2rem;
+    max-width: 100vw;
+    grid-area: splitMiddle;
+}
+
+.splitPageMiddle ul,
+.splitPageMiddle li {
+    font-weight: 300;
+}
+
+.splitPageLeft {
+    display: none;
+    grid-area: splitLeft;
+}
+
+.splitPageLeft,
+.splitPageRight {
+    background-color: #f7f7f7;
+    /* padding: 1.25rem 2rem; */
+}
+
+.sideNav {
+    margin: 1.25rem 2rem;
+    position: static;
+    width: 100%;
+}
+
+.sideNav ul,
+.sideNav li {
+    font-size: 0.9rem;
+    list-style: none;
+    margin: 0;
+    line-height: 210%;
+    cursor: pointer;
+}
+.sideNav ul {
+    padding: 0;
+}
+
+code {
+    font-family: "Fira Mono", Menlo, Monaco, Consolas, Courier New, monospace;
+    font-weight: 400;
+}
+
+.codeBlock {
+    background-color: #111122e0;
+    margin: 1rem -1.2rem 1.5rem -1.2rem;
+    padding: 1.5rem 1.2rem;
+    overflow: auto;
+}
+
+.codeBlock + .codeBlock {
+    background-color: #111122;
+    margin-top: -1.4rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #111122;
     display: flex;
-    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 6rem;
+    max-height: 6rem;
+}
+
+.footer code {
+    margin: auto;
+    color: white;
 }
 
 h1,
@@ -35,21 +111,19 @@ h1 + h2 {
     margin-top: 1rem;
 }
 
-h1:nth-of-type(n + 2) {
-    margin-top: 3rem;
+h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
 }
 
-h1 {
-    font-size: 3rem;
-    font-weight: 600;
-    /* line-height: 3rem; */
+h1:nth-of-type(n + 2) {
+    margin-top: 3rem;
 }
 
 h2 {
     font-size: 2rem;
     font-weight: 500;
     margin-top: 2.5rem;
-    /* line-height: 2.5rem; */
 }
 
 h3 {
@@ -58,6 +132,7 @@ h3 {
 }
 
 p {
+    font-size: 1rem;
     color: #303030;
     font-weight: 300;
     margin-top: 1rem;
@@ -79,99 +154,6 @@ a:hover {
     background-color: rgba(150, 150, 150, 0.3);
 }
 
-code {
-    font-family: "Fira Mono", Menlo, Monaco, Consolas, Courier New, monospace;
-    font-weight: 400;
-}
-
-.navbar-dark {
-    padding: 12px 20px;
-    background-color: #111122;
-}
-
-.splitPage {
-    flex: 1;
-    display: grid;
-    grid-template-columns: 0.2fr 1.5fr 0.8fr;
-}
-
-.splitPage a {
-    color: #61aeee;
-}
-
-.splitPage a:hover {
-    color: #218ae0;
-}
-
-.splitPageLeft {
-    grid-column: 1 / 2;
-}
-
-.splitPageRight {
-    grid-column: 3 / 4;
-}
-
-.splitPageLeft,
-.splitPageRight {
-    background-color: #f7f7f7;
-    padding: 1.25rem 2rem;
-}
-
-.splitPageMiddle {
-    grid-column: 2 / 3;
-    padding: 1.5rem 2.5rem;
-}
-
-.splitPageMiddle ul,
-.splitPageMiddle li {
-    font-weight: 300;
-}
-
-.footer {
-    position: absolute;
-    bottom: 0;
-    background-color: #111122;
-    height: 100px;
-    width: 100%;
-    display: grid;
-}
-
-.footer code {
-    margin: auto;
-    color: white;
-}
-
-.sideNav {
-    position: sticky;
-    top: 1.25rem;
-}
-
-.sideNav ul {
-    padding: 0;
-}
-
-.sideNav ul,
-.sideNav li {
-    font-size: 0.8rem;
-    list-style: none;
-    margin: 0;
-    line-height: 210%;
-    cursor: pointer;
-}
-
-.codeBlock {
-    background-color: #111122e0;
-    margin: 1rem -2.5rem 1.5rem -2.5rem;
-    padding: 1.5rem 2.5rem;
-}
-
-.codeBlock + .codeBlock {
-    background-color: #111122;
-    margin-top: -1.4rem;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-}
-
 .logo {
     margin-right: 10px;
 }
@@ -180,85 +162,91 @@ code {
     text-decoration: underline;
 }
 
+.sideNavContent {
+    max-height: 100%;
+}
+
 input#sideNavContents {
     display: none;
 }
 
 .sideNav label {
-    display: none;
+    display: block;
+    cursor: pointer;
+    margin-bottom: 0;
+    color: #e06c75;
 }
 
 .sideNavContent {
-    max-height: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
 }
 
-@media only screen and (max-width: 992px) {
-    .splitPage {
-        grid-template-columns: 0fr 2fr 1fr;
-    }
+input:checked ~ .sideNavContent {
+    max-height: 100vh;
 }
 
-@media only screen and (max-width: 600px) {
-    .sideNav {
-        position: static;
-        width: 100%;
-        margin: 1rem 1.5rem;
-    }
+#root > div {
+    height: 100vh;
+    display: grid;
+    grid-auto-columns: auto;
+    grid-template-rows: auto auto 1fr auto auto;
+    grid-template-areas:
+        "header"
+        "splitRight"
+        "splitMiddle"
+        "splitLeft"
+        "footer";
+}
 
-    .sideNav li {
-        font-size: 0.9rem;
-    }
-
-    .sideNav label {
-        display: block;
-        cursor: pointer;
-        margin-bottom: 0;
-        color: #e06c75;
-    }
-
-    .sideNavContent {
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.5s ease;
-    }
-
-    input:checked ~ .sideNavContent {
-        max-height: 100vh;
-    }
-
-    .splitPage {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 0px;
-        overflow: hidden;
-    }
-
-    .navbar {
-        width: 100%;
-    }
-
-    .splitPageRight {
-        order: 0;
-        margin-bottom: 0px;
-        padding: 0;
-    }
-
-    .splitPageMiddle {
-        order: 1;
-        padding: 1.5rem 1.2rem;
-    }
-
-    .codeBlock {
-        margin: 1rem -1.2rem 1.5rem -1.2rem;
-        padding: 1.5rem 1.2rem;
+@media only screen and (min-width: 700px) {
+    #root > div {
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        grid-template-columns: 0.2fr minmax(0, 1.5fr) 0.8fr;
+        grid-template-areas:
+            "header    header      header"
+            "splitLeft splitMiddle splitRight"
+            "footer    footer      footer";
     }
 
     .splitPageLeft {
+        display: block;
+    }
+
+    .splitPageMiddle {
+        padding: 1.5rem 2.5rem;
+    }
+
+    .codeBlock {
+        padding: 1.5rem 2.5rem;
+        margin: 1rem -2.5rem 1.5rem -2.5rem;
+    }
+
+    .sideNav label {
         display: none;
     }
 
+    input:not(:checked) ~ .sideNavContent {
+        min-height: 100vh;
+    }
+
+    .sideNav li {
+        font-size: 0.8rem;
+    }
+
+    .sideNav {
+        position: sticky;
+        top: 1.25rem;
+    }
+
+    .sideNavContent {
+        height: 500px;
+    }
+
     h1 {
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
 
     h2 {
@@ -267,9 +255,5 @@ input#sideNavContents {
 
     h3 {
         font-size: 1.5rem;
-    }
-
-    p {
-        font-size: 1rem;
     }
 }
