@@ -52,8 +52,6 @@ body,
 .sideNav {
     margin: 1.25rem 2rem;
     position: static;
-    /* width: 100%; */
-    width: 300px;
 }
 
 .sideNav ul,
@@ -190,7 +188,6 @@ input:checked ~ .sideNavContent {
 }
 
 #root > div {
-    overflow-x: hidden;
     height: 100vh;
     display: grid;
     grid-auto-columns: auto;
