@@ -33,6 +33,14 @@ body,
     grid-area: splitMiddle;
 }
 
+.splitPageMiddle a {
+    color: #61aeee;
+}
+
+.splitPageMiddle a:hover {
+    color: #218ae0;
+}
+
 .splitPageMiddle ul,
 .splitPageMiddle li {
     font-weight: 300;
@@ -46,7 +54,6 @@ body,
 .splitPageLeft,
 .splitPageRight {
     background-color: #f7f7f7;
-    /* padding: 1.25rem 2rem; */
 }
 
 .sideNav {
@@ -60,11 +67,14 @@ body,
     list-style: none;
     margin: 0;
     line-height: 210%;
-    cursor: pointer;
 }
 
 .sideNav ul {
     padding: 0;
+}
+
+.sideNav li {
+    cursor: pointer;
 }
 
 code {

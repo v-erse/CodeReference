@@ -34,9 +34,9 @@ export function SNavLink(props) {
         styles.color = "#707070";
     }
     if (node.nodeName === "H2") {
-        styles.marginLeft = "17px";
+        styles.paddingLeft = "17px";
     } else if (node.nodeName === "H3") {
-        styles.marginLeft = "34px";
+        styles.paddingLeft = "34px";
     }
 
     return (

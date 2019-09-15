@@ -55,16 +55,7 @@ sayHello();
 >> "Hello, world!"
 ```
 
-# The Basics
-
-<!--
-## Syntax details
-
----
-
-Before we start, we should look at some of the basic details of JavaScript syntax. -->
-
-## Variables
+# Variables
 
 ---
 
@@ -112,7 +103,7 @@ const MY_OBJECT = { key: "value" };
 MY_OBJECT.key = "otherValue";
 ```
 
-## Types
+# Data Types
 
 ---
 
@@ -138,7 +129,9 @@ typeof true;
 >> "boolean"
 ```
 
-### Truthy and Falsy?
+## Truthy and Falsy?
+
+---
 
 All values in JavaScript will evaluate to `true` or `false` in a Boolean context. The ones that evaluate to `true` are called _truthy_ values, and the ones that evaluate to `false` are _falsy_.
 
@@ -186,12 +179,148 @@ Boolean("non-empty string"); // >> true
 !!"non-empty string"; // >> true
 ```
 
-## Operators
+# Loops
 
-## Data Structures
+---
 
-## Functions
+[DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself).
 
-<!-- ```
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-``` -->
+## `for` loops
+
+---
+
+JavaScript `for` loops are similar to those in Java and C.
+
+```js
+for (startHere; checkThis; updateLikeThis) {
+    doThis;
+}
+```
+
+-   `startHere` initializes the loop. Usually, you put a counter here and set it to a start value
+-   `checkThis` is the condition that the loop checks against on every iteration. If it evaluates to `true`, continue, if it evaluates to `false`, stop.
+-   Then `doThis` is carried out.
+-   `updateLikeThis` describes how to update. Here is where you would iterate on a counter you initialized in `startHere`.
+
+Here is an example:
+
+```js
+let numArr = [];
+
+for (let i = 0; i < 10; i++) {
+    numArr.push(i);
+}
+
+console.log(numArr);
+```
+
+```
+>> Array(10) [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 ]
+```
+
+### `for/in`
+
+The `for/in` statement is specifically for when you want to loop over the items in an object or collection. It save you from having to write an initial counter or having to update one.
+
+```js
+let numArr = [1, 2, 3, 4, 5];
+let sqrdArr = [];
+
+for (i in numArr) {
+    num = numArr[i];
+    sqrdNum = num ** 2;
+    sqrdArr.push(sqrdNum);
+}
+
+console.log(sqrdArr);
+```
+
+```
+>> Array(5) [ 1, 4, 9, 16, 25 ]
+```
+
+The `for/in` statement is actually iterating over the objects property names, so for each `i in numArr` above, you're getting the index of the element `i`. To get to the number we want, we have to access it with `numArr[i]`.
+
+The code below highlights this in a more clear way.
+
+```js
+let myObj = { a: 1, b: 2, c: 3 };
+
+for (i in myObj) {
+    console.log(i);
+}
+```
+
+```
+>> a
+>> b
+>> c
+```
+
+### `for/of`
+
+The `for/of` statement does the opposite to what the `for/in` statement does. Instead of iterating over the property names, it iterates over their values:
+
+```js
+let positions = ["first", "second", "third"];
+
+for (i of positions) {
+    console.log(i);
+}
+```
+
+```
+>> 1
+>> 2
+>> 3
+```
+
+## `while` loops
+
+---
+
+A `while` loop will continue to execute for as long as it's condition is `false`. Once the condition becomes `true` it will stop.
+
+### `do/while`
+
+# Functions
+
+---
+
+A significant sidenote about declaring functions: function declarations get hoisted to the top of a script, but function expressions don't.
+
+This means that writing a function in this manner will allow you to call it above where you wrote it.
+
+```js
+myFunction(1); // This is fine
+
+function myFunction(myArg) {
+    console.log(myArg + 1);
+}
+```
+
+```
+>> 2
+```
+
+But if you use a function expression, it won't work.
+
+```js
+myFunction(1); // This will not work
+
+const myFunction = (myArg) => {
+    console.log(myArg + 1);
+};
+```
+
+```
+>> ReferenceError
+```
+
+# Collections
+
+---
+
+# Objects
+
+---
