@@ -41,6 +41,16 @@ body,
     color: #218ae0;
 }
 
+.splitPageMiddle img {
+    width: 100%;
+}
+
+.splitPageMiddle img + em {
+    margin: 0.8rem 2rem 0 2rem;
+    display: block;
+    text-align: center;
+}
+
 .splitPageMiddle ul,
 .splitPageMiddle li {
     font-weight: 300;

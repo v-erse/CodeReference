@@ -279,9 +279,62 @@ for (i of positions) {
 
 ---
 
-A `while` loop will continue to execute for as long as it's condition is `false`. Once the condition becomes `true` it will stop.
+A `while` loop will continue to execute for as long as it's condition is `true`. Once the condition becomes `false` it will stop. Here is what they look like:
+
+```js
+while (thisIsTrue) {
+    doThis;
+}
+```
+
+In every iteration, the condition will be checked first, before the program goes on to execute the `doThis` section.
+
+```js
+let i = 0;
+let indexArr = [];
+
+while (i < 5) {
+    indexArr.push(i);
+    i++;
+}
+
+console.log(indexArr);
+```
+
+```
+>> Array(5) [ 0, 1, 2, 3, 4 ]
+```
 
 ### `do/while`
+
+A `do/while` loop is like a `while` loop, except the condition is checked _after_ the execution. This means that when you run a `do/while` loop, it will always execute at least once.
+
+```js
+do {
+    doThis;
+} while (thisIsTrue);
+```
+
+Here's an example:
+
+```js
+let i = 0;
+let indexArr = [];
+
+do {
+    indexArr.push(i);
+    i++;
+} while (i < 5);
+
+console.log(indexArr);
+```
+
+```
+>> Array(5) [ 0, 1, 2, 3, 4 ]
+```
+
+![](https://i.imgur.com/6hghCJB.jpg)
+_This picture of Roadrunner and Wile E. Coyote illustrates the dangers of a `do/while` loop used in the wrong context._
 
 # Functions
 
