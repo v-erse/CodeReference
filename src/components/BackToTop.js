@@ -8,12 +8,12 @@ export default function BackToTop() {
         right: "1.3rem",
         padding: "1rem 1.2rem",
         zIndex: "99",
-        border: "none",
         outline: "none",
         backgroundColor: "#111122e0",
         color: "#dadbdd",
         cursor: "pointer",
         borderRadius: "2px",
+        border: "1px solid #dadbdd",
         fontFamily: "Fira Mono",
         fontWeight: "300"
     });

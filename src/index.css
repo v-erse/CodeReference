@@ -161,6 +161,13 @@ p {
     margin-bottom: 1.5rem;
 }
 
+p code {
+    background-color: #2e2e3d11;
+    color: #303030;
+    padding: 3px;
+    border-radius: 2px;
+}
+
 hr {
     margin-bottom: 1.2rem;
 }
@@ -253,7 +260,7 @@ input:checked ~ .sideNavContent {
     }
 
     input:not(:checked) ~ .sideNavContent {
-        min-height: 92vh;
+        max-height: 92vh;
         overflow-y: auto;
     }
 
