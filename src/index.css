@@ -48,6 +48,7 @@ body,
 .splitPageMiddle img + em {
     margin: 0.8rem 2rem 0 2rem;
     display: block;
+    font-size: 0.9rem;
     text-align: center;
 }
 
