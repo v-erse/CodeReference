@@ -10,6 +10,7 @@ import remark2rehype from "remark-rehype";
 import highlight from "rehype-highlight";
 import rehype2react from "rehype-react";
 import slug from "rehype-slug";
+import BackToTop from "./BackToTop";
 
 export default function Layout(props) {
     const [content, setContent] = useState("");
@@ -58,9 +59,14 @@ export default function Layout(props) {
     }, [content]);
 
     return (
-        <SplitPage
-            right={props.withSideNav ? <SideNav headerIds={headerIds} /> : ""}>
-            {props.markdown ? content : props.children}
-        </SplitPage>
+        <>
+            <BackToTop />
+            <SplitPage
+                right={
+                    props.withSideNav ? <SideNav headerIds={headerIds} /> : ""
+                }>
+                {props.markdown ? content : props.children}
+            </SplitPage>
+        </>
     );
 }

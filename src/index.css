@@ -94,7 +94,7 @@ code {
 }
 
 .codeBlock {
-    background-color: #111122e0;
+    background-color: #2e2e3d;
     margin: 1rem -1.2rem 1.5rem -1.2rem;
     padding: 1.5rem 1.2rem;
     width: 100vw;
@@ -206,7 +206,7 @@ input#sideNavContents {
 }
 
 input:checked ~ .sideNavContent {
-    max-height: 100vh;
+    max-height: 77vh;
     overflow-y: auto;
 }
 
