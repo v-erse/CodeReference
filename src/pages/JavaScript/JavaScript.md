@@ -398,9 +398,9 @@ myLoop: while (myCondition) {
 }
 ```
 
-Using `label`s we can `break` or `continue` a specific loops execution, which is useful when handling nested loops.
+Using `label`s we can `break` or `continue` a specific loops' execution, which is useful when handling nested loops.
 
-The code below includes a loop for one array, and another loop for another array inside it. It checks to see if the index for `xArr` has exceeded the length of `yArr`, and if so, breaks the outer loop. As a result, we get a nice square matrix printed to the console. _(However, we do have an extra 4th array at the end of the matrix held in `matrix` after the loop breaks, because it still gets a chance to initialise one during the line `matrix[ix] = []`)._
+The code below includes a loop for one array, and another loop for another array inside it. It checks to see if the index for `xArr` has exceeded the length of `yArr`, and if so, breaks the outer loop. As a result, we get a nice square matrix of coordinates printed to the console. _(However, we do have an extra 4th array at the end of the matrix held in `matrix` after the loop breaks, because it still gets a chance to initialise one during the line `matrix[ix] = []`)._
 
 ```js
 let xArr = [0, 1, 2, 3, 4];

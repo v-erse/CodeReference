@@ -183,10 +183,10 @@ a:hover {
 .footer code a:hover {
     text-decoration: underline;
 }
-
+/* 
 .sideNavContent {
     max-height: 100%;
-}
+} */
 
 input#sideNavContents {
     display: none;
@@ -207,6 +207,7 @@ input#sideNavContents {
 
 input:checked ~ .sideNavContent {
     max-height: 100vh;
+    overflow-y: auto;
 }
 
 #root > div {
@@ -252,7 +253,8 @@ input:checked ~ .sideNavContent {
     }
 
     input:not(:checked) ~ .sideNavContent {
-        min-height: 100vh;
+        min-height: 92vh;
+        overflow-y: auto;
     }
 
     .sideNav li {
@@ -264,9 +266,9 @@ input:checked ~ .sideNavContent {
         top: 1.25rem;
     }
 
-    .sideNavContent {
+    /* .sideNavContent {
         height: 500px;
-    }
+    } */
 
     h1 {
         font-size: 3rem;
