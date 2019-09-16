@@ -333,8 +333,96 @@ console.log(indexArr);
 >> Array(5) [ 0, 1, 2, 3, 4 ]
 ```
 
-![](https://i.imgur.com/6hghCJB.jpg)
+![](https://i.imgur.com/XTsoTca.jpg)
 _This picture of Roadrunner and Wile E. Coyote illustrates the dangers of a `do/while` loop used in the wrong context._
+
+## Fine-tuning Loops
+
+---
+
+### `break`
+
+You can `break` a loop in the middle of it's execution if some condition is satisfied and you don't need or want the loop to keep going. After the `break`, control is transferred to the next statement.
+
+```js
+let i = 0;
+
+while (true) {
+    i++;
+    console.log(i);
+    if (i == 3) {
+        break;
+    }
+}
+```
+
+```
+>> 1
+>> 2
+>> 3
+```
+
+### `continue`
+
+`continue` is a way to handle how complete each iteration of a loop will be.
+
+The `continue` statement sort of acts as a gatekeeper for the rest of the code. If `continue` is executed, the code is stopped early, and another iteration started. If you can get past `continue`, though, you can reach the rest of the code.
+
+Below: if the condition `i % 4 != 0` is `true`, the code inside the `if` statement will run. Since that code is just a `continue` statement, the loop will just restart. To get passed the `continue` statement and reach `console.log(i)`, the `if` condition must evaluate to `false`.
+
+```js
+let i = 0;
+
+while (i < 12) {
+    i++;
+    if (i % 4 != 0) {
+        continue;
+    }
+    console.log(i);
+}
+```
+
+```
+>> 4
+>> 8
+>> 12
+```
+
+### `label`
+
+You can use `label`s to refer to your loops (or any other statement) elsewhere in your program.
+
+```js
+myLoop: while (myCondition) {
+    doThis;
+}
+```
+
+Using `label`s we can `break` or `continue` a specific loops execution, which is useful when handling nested loops.
+
+The code below includes a loop for one array, and another loop for another array inside it. It checks to see if the index for `xArr` has exceeded the length of `yArr`, and if so, breaks the outer loop. As a result, we get a nice square matrix printed to the console. _(However, we do have an extra 4th array at the end of the matrix held in `matrix` after the loop breaks, because it still gets a chance to initialise one during the line `matrix[ix] = []`)._
+
+```js
+let xArr = [0, 1, 2, 3, 4];
+let yArr = [0, 1, 2];
+
+let matrix = [];
+
+outerLoop: for (ix in xArr) {
+    matrix[ix] = [];
+    for (iy in yArr) {
+        if (ix >= yArr.length) break outerLoop;
+        matrix[ix][iy] = "(" + xArr[ix] + ", " + yArr[iy] + ")";
+    }
+    console.log(matrix[ix]);
+}
+```
+
+```
+Array(3) [ "(0, 0)", "(0, 1)", "(0, 2)" ]
+Array(3) [ "(1, 0)", "(1, 1)", "(1, 2)" ]
+Array(3) [ "(2, 0)", "(2, 1)", "(2, 2)" ]
+```
 
 # Functions
 
