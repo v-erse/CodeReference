@@ -22,6 +22,7 @@ export default function BackToTop() {
         window.scrollTo({ top: 0, behavior: "smooth" });
     }
 
+    // adds scroll event listener on component mount, removes it after unmount
     useEffect(() => {
         function checkTop() {
             if (window.scrollY > 500) {
@@ -38,7 +39,7 @@ export default function BackToTop() {
         return function cleanUp() {
             window.removeEventListener("scroll", checkTop);
         };
-    });
+    }, []);
 
     return (
         <button onClick={handleClick} id='backToTop' style={styles}>

@@ -428,6 +428,77 @@ Array(3) [ "(2, 0)", "(2, 1)", "(2, 2)" ]
 
 ---
 
+We can use functions to break down our code into chunks that perform a task that we know we will need to perform more than once, perhaps with different data or in different contexts.
+
+## Defining Functions
+
+---
+
+### Declarations
+
+A declaration is the simplest way to write a function in JavaScript. This is what a simple function declaration looks like:
+
+```js
+function timesTwo(input) {
+    let output = input * 2;
+    return output;
+}
+```
+
+First we use the `function` keyword to declare a function and give it a name: `timesTwo`. Then we name the _parameter_ it will receive, here we named it `input`. Within the function's curly brackets, we define a new variable `output` that multiplies `input` by 2. We then `return output`.
+
+When we call the function, it will run the statements inside it, and return us it's output, which looks like this:
+
+```js
+timesTwo(3);
+```
+
+```
+>> 6
+```
+
+Below, we call the function within the declaration of a variable. The function's output becomes the value of our variable.
+
+```js
+let result = timesTwo(5);
+
+console.log(result);
+```
+
+```
+>> 10
+```
+
+We can simplify our function by putting the calculation expression in our return statement, performing both tasks in one line:
+
+```js
+function timesTwo(input) {
+    return input * 2;
+}
+```
+
+### Expressions
+
+Function declarations are statements, but functions can be defined with expressions too. This kind of function can be _anonymous_, meaning it doesn't need to have a name in it's declaration after the `function` keyword. We can store them in variables, like below.
+
+```js
+const timesTwo = function(input) {
+    return input * 2;
+};
+```
+
+Functions defined using expressions and stored in variables can be called from the variables that hold them:
+
+```js
+timesTwo(4);
+```
+
+```
+>> 8
+```
+
+### Hoisting
+
 A significant sidenote about declaring functions: function declarations get hoisted to the top of a script, but function expressions don't.
 
 This means that writing a function in this manner will allow you to call it above where you wrote it.
@@ -457,6 +528,24 @@ const myFunction = (myArg) => {
 ```
 >> ReferenceError
 ```
+
+### Arguments
+
+## Calling Functions
+
+---
+
+## Closures
+
+---
+
+## Arrow Functions
+
+---
+
+## Generators
+
+---
 
 # Collections
 
