@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { get } from "http";
 
 export function SNavLink(props) {
     const [highlighted, setHighlighted] = useState(false);
@@ -32,7 +33,15 @@ export function SNavLink(props) {
         styles.color = "#404040";
     } else if (props.inView === id) {
         styles.color = "#707070";
+
+        let navTop = document
+            .getElementById(id + "-nav")
+            .getBoundingClientRect().top;
+        document
+            .getElementById("contents")
+            .scrollTo({ top: navTop, behavior: "smooth" });
     }
+
     if (node.nodeName === "H2") {
         styles.paddingLeft = "17px";
     } else if (node.nodeName === "H3") {
@@ -44,7 +53,8 @@ export function SNavLink(props) {
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
             onClick={handleClick}
-            style={styles}>
+            style={styles}
+            id={id + "-nav"}>
             {node.innerText}
         </li>
     );
@@ -82,7 +92,7 @@ export function SideNav(props) {
         <div className='sideNav'>
             <input type='checkbox' id='sideNavContents' />
             <label htmlFor='sideNavContents'>Contents</label>
-            <ul className='sideNavContent'>
+            <ul className='sideNavContent' id='contents'>
                 {props.headerIds
                     ? props.headerIds.map((id) => {
                           return (

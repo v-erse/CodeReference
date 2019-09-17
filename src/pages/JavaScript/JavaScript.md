@@ -457,7 +457,7 @@ timesTwo(3);
 >> 6
 ```
 
-Below, we call the function within the declaration of a variable. The function's output becomes the value of our variable.
+Below, we call the function within the declaration of a variable we'll call `result`. The function's output becomes the value of our variable.
 
 ```js
 let result = timesTwo(5);
