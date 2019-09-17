@@ -13,7 +13,7 @@ export default function BackToTop() {
         color: "#dadbdd",
         cursor: "pointer",
         borderRadius: "2px",
-        border: "1px solid #dadbdd",
+        border: "1px solid #dadbdd45",
         fontFamily: "Fira Mono",
         fontWeight: "300"
     });

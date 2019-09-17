@@ -93,6 +93,19 @@ code {
     font-weight: 400;
 }
 
+p code,
+ul code,
+li code,
+h1 code,
+h2 code,
+h3 code {
+    background-color: #2e2e3d11;
+    color: #303030;
+    padding: 3px;
+    border-radius: 2px;
+    font-style: normal;
+}
+
 .codeBlock {
     background-color: #2e2e3d;
     margin: 1rem -1.2rem 1.5rem -1.2rem;
@@ -159,13 +172,6 @@ p {
     font-weight: 300;
     margin-top: 1rem;
     margin-bottom: 1.5rem;
-}
-
-p code {
-    background-color: #2e2e3d11;
-    color: #303030;
-    padding: 3px;
-    border-radius: 2px;
 }
 
 hr {
