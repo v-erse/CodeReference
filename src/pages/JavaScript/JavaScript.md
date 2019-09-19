@@ -10,6 +10,10 @@ It was created by Brendan Eich in 1995, at the time working at Netscape Communic
 
 Marc Andreessen (Netscape founder) thought HTML needed a "glue language" that made web pages more interactive and dynamic. Brendan Eich was hired to create it. Because it was working alongside Java in Netscape Navigator, they decided to call it JavaScript.
 
+But besides a few similarities in syntax, JavaScript doesn't have much to do with Java. 
+
+“Java is to JavaScript what Car is to Carpet.” - Christian Heilmann 
+
 To prevent other languages from taking the spot before JavaScript could, Brendan wrote the first prototype in 10 days.
 
 Since then, JavaScript has become more than a tool for interaction. It is now used in both the [front](/front-end) and [back ends](/back-end) of web apps, and even in non-web programs (see: [React Native](https://facebook.github.io/react-native/) and [Electron](https://electronjs.org/)).
