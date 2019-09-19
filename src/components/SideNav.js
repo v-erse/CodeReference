@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { get } from "http";
 
 export function SNavLink(props) {
     const [highlighted, setHighlighted] = useState(false);
@@ -18,7 +17,6 @@ export function SNavLink(props) {
         let parentTop = document.getElementById("root").getBoundingClientRect()
             .top;
         let y = node.getBoundingClientRect().top - parentTop;
-        console.log(y);
         window.scrollTo({
             top: y - 15,
             behavior: "smooth"
@@ -29,17 +27,11 @@ export function SNavLink(props) {
         color: "#b8b8b8",
         fontWeight: "300"
     };
+
     if (highlighted) {
         styles.color = "#404040";
     } else if (props.inView === id) {
         styles.color = "#707070";
-
-        let navTop = document
-            .getElementById(id + "-nav")
-            .getBoundingClientRect().top;
-        document
-            .getElementById("contents")
-            .scrollTo({ top: navTop, behavior: "smooth" });
     }
 
     if (node.nodeName === "H2") {
@@ -87,6 +79,24 @@ export function SideNav(props) {
             };
         }
     }, [props.headerIds]);
+
+    useEffect(() => {
+        console.log(inView);
+
+        let sideNavTop = document
+            .getElementById("contents")
+            .getBoundingClientRect().top;
+
+        if (inView) {
+            let inViewTop =
+                document.getElementById(inView + "-nav").getBoundingClientRect()
+                    .top - sideNavTop;
+
+            document
+                .getElementById("contents")
+                .scrollTo({ top: inViewTop, behavior: "smooth" });
+        }
+    }, [inView]);
 
     return (
         <div className='sideNav'>
