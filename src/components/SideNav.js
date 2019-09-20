@@ -55,8 +55,8 @@ export function SNavLink(props) {
 
 export function SideNav(props) {
     const [inView, setInView] = useState("");
-    const [scrollbarClicked, setScrollbarClicked] = useState(false);
-    const [mouseInSideNav, setMouseInSideNav] = useState(false);
+    const [clickedInside, setClickedInside] = useState(false);
+    const [mouseInside, setMouseInside] = useState(false);
 
     useEffect(() => {
         if (props.headerIds) {
@@ -82,14 +82,14 @@ export function SideNav(props) {
 
                 const pageScroll = window.scrollY - container.offsetTop;
 
-                if (!mouseInSideNav) {
-                    if (scrollbarClicked) {
+                if (!mouseInside) {
+                    if (clickedInside) {
                         contents.scrollTo({
                             top: pageScroll * ratio,
                             behavior: "smooth"
                         });
                         setTimeout(() => {
-                            setScrollbarClicked(false);
+                            setClickedInside(false);
                         }, 1000);
                     } else {
                         contents.scrollTop = pageScroll * ratio;
@@ -110,9 +110,9 @@ export function SideNav(props) {
                 window.removeEventListener("scroll", handleScroll);
             };
         }
-    }, [props.headerIds, scrollbarClicked, mouseInSideNav]);
+    }, [props.headerIds, clickedInside, mouseInside]);
 
-    console.log(mouseInSideNav);
+    console.log(mouseInside);
 
     return (
         <div className='sideNav'>
@@ -121,9 +121,10 @@ export function SideNav(props) {
             <ul
                 className='sideNavContent'
                 id='contents'
-                onMouseEnter={() => setMouseInSideNav(true)}
-                onMouseLeave={() => setMouseInSideNav(false)}
-                onScroll={() => setScrollbarClicked(true)}>
+                onMouseEnter={() => setMouseInside(true)}
+                onMouseLeave={() => setMouseInside(false)}
+                onScroll={() => setClickedInside(true)}
+                onClick={() => setClickedInside(true)}>
                 {props.headerIds
                     ? props.headerIds.map((id) => {
                           return (
