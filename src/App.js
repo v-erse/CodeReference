@@ -11,6 +11,7 @@ import Home from "./pages/Home/Home";
 import Languages from "./pages/Languages/Languages";
 import ReactHome from "./pages/react/ReactHome";
 import JavaScript from "./pages/JavaScript/JavaScript";
+import TypeScript from "./pages/TypeScript/TypeScript";
 
 /**
  * Relevant links:
@@ -33,6 +34,11 @@ function App() {
                         exact
                         path='/languages/javascript'
                         component={JavaScript}
+                    />
+                    <Route
+                        exact
+                        path='/languages/typescript'
+                        component={TypeScript}
                     />
                 </Switch>
                 <Footer />

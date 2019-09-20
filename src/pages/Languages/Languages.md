@@ -8,5 +8,5 @@
 -   [CSS](/CSS) -->
 
 -   [JavaScript](/languages/javascript)
-    <!-- -   [TypeScript](/TypeScript) -->
+-   [TypeScript](/languages/typescript)
     <!-- -   [Python](/Python) -->
