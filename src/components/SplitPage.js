@@ -5,7 +5,9 @@ export function SplitPage(props) {
         // <div className='splitPage'>
         <>
             <div className='splitPageLeft'>{props.left}</div>
-            <div className='splitPageMiddle'>{props.children}</div>
+            <div className='splitPageMiddle' id='splitPageMiddle'>
+                {props.children}
+            </div>
             <div className='splitPageRight'>{props.right}</div>
         </>
         // </div>

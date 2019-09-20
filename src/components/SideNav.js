@@ -4,6 +4,7 @@ export function SNavLink(props) {
     const [highlighted, setHighlighted] = useState(false);
     const id = props.toId || props.headerId;
     const node = document.getElementById(id);
+    const isInView = props.currentlyInView === id;
 
     function handleMouseEnter() {
         setHighlighted(true);
@@ -30,7 +31,7 @@ export function SNavLink(props) {
 
     if (highlighted) {
         styles.color = "#404040";
-    } else if (props.inView === id) {
+    } else if (isInView) {
         styles.color = "#707070";
     }
 
@@ -54,6 +55,7 @@ export function SNavLink(props) {
 
 export function SideNav(props) {
     const [inView, setInView] = useState("");
+    const [scrollbarClicked, setScrollbarClicked] = useState(false);
 
     useEffect(() => {
         if (props.headerIds) {
@@ -72,31 +74,50 @@ export function SideNav(props) {
 
             checkInView();
 
-            window.addEventListener("scroll", checkInView);
+            function scrollContents() {
+                const contents = document.getElementById("contents");
+                const container = contents.parentElement.parentElement;
+                const ratio =
+                    contents.getBoundingClientRect().height /
+                    container.getBoundingClientRect().height;
+
+                const pageScroll = window.scrollY - container.offsetTop;
+
+                if (scrollbarClicked) {
+                    contents.scrollTo({
+                        top: pageScroll * ratio,
+                        behavior: "smooth"
+                    });
+                    setTimeout(() => {
+                        setScrollbarClicked(false);
+                    }, 1000);
+                } else {
+                    contents.scrollTop = pageScroll * ratio;
+                }
+            }
+
+            function catchScrollBarClick(event) {
+                // the only place a user can click in ul#contents without
+                // clicking a nav item is the scrollbar
+                if (event.target.id === "contents") {
+                    setScrollbarClicked(true);
+                }
+            }
+
+            function handleScroll() {
+                checkInView();
+                scrollContents();
+            }
+
+            window.addEventListener("scroll", handleScroll);
+            document.addEventListener("mousedown", catchScrollBarClick);
 
             return function cleanUp() {
-                window.removeEventListener("scroll", checkInView);
+                window.removeEventListener("scroll", handleScroll);
+                document.removeEventListener("mousedown", catchScrollBarClick);
             };
         }
-    }, [props.headerIds]);
-
-    useEffect(() => {
-        console.log(inView);
-
-        let sideNavTop = document
-            .getElementById("contents")
-            .getBoundingClientRect().top;
-
-        if (inView) {
-            let inViewTop =
-                document.getElementById(inView + "-nav").getBoundingClientRect()
-                    .top - sideNavTop;
-
-            document
-                .getElementById("contents")
-                .scrollTo({ top: inViewTop, behavior: "smooth" });
-        }
-    }, [inView]);
+    }, [props.headerIds, scrollbarClicked]);
 
     return (
         <div className='sideNav'>
@@ -108,7 +129,7 @@ export function SideNav(props) {
                           return (
                               <SNavLink
                                   key={id}
-                                  inView={inView}
+                                  currentlyInView={inView}
                                   headerId={id}
                               />
                           );
