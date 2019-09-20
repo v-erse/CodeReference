@@ -56,6 +56,7 @@ export function SNavLink(props) {
 export function SideNav(props) {
     const [inView, setInView] = useState("");
     const [scrollbarClicked, setScrollbarClicked] = useState(false);
+    const [mouseInSideNav, setMouseInSideNav] = useState(false);
 
     useEffect(() => {
         if (props.headerIds) {
@@ -72,8 +73,6 @@ export function SideNav(props) {
                 });
             }
 
-            checkInView();
-
             function scrollContents() {
                 const contents = document.getElementById("contents");
                 const container = contents.parentElement.parentElement;
@@ -83,26 +82,22 @@ export function SideNav(props) {
 
                 const pageScroll = window.scrollY - container.offsetTop;
 
-                if (scrollbarClicked) {
-                    contents.scrollTo({
-                        top: pageScroll * ratio,
-                        behavior: "smooth"
-                    });
-                    setTimeout(() => {
-                        setScrollbarClicked(false);
-                    }, 1000);
-                } else {
-                    contents.scrollTop = pageScroll * ratio;
+                if (!mouseInSideNav) {
+                    if (scrollbarClicked) {
+                        contents.scrollTo({
+                            top: pageScroll * ratio,
+                            behavior: "smooth"
+                        });
+                        setTimeout(() => {
+                            setScrollbarClicked(false);
+                        }, 1000);
+                    } else {
+                        contents.scrollTop = pageScroll * ratio;
+                    }
                 }
             }
 
-            function catchScrollBarClick(event) {
-                // the only place a user can click in ul#contents without
-                // clicking a nav item is the scrollbar
-                if (event.target.id === "contents") {
-                    setScrollbarClicked(true);
-                }
-            }
+            checkInView();
 
             function handleScroll() {
                 checkInView();
@@ -110,20 +105,25 @@ export function SideNav(props) {
             }
 
             window.addEventListener("scroll", handleScroll);
-            document.addEventListener("mousedown", catchScrollBarClick);
 
             return function cleanUp() {
                 window.removeEventListener("scroll", handleScroll);
-                document.removeEventListener("mousedown", catchScrollBarClick);
             };
         }
-    }, [props.headerIds, scrollbarClicked]);
+    }, [props.headerIds, scrollbarClicked, mouseInSideNav]);
+
+    console.log(mouseInSideNav);
 
     return (
         <div className='sideNav'>
             <input type='checkbox' id='sideNavContents' />
             <label htmlFor='sideNavContents'>Contents</label>
-            <ul className='sideNavContent' id='contents'>
+            <ul
+                className='sideNavContent'
+                id='contents'
+                onMouseEnter={() => setMouseInSideNav(true)}
+                onMouseLeave={() => setMouseInSideNav(false)}
+                onScroll={() => setScrollbarClicked(true)}>
                 {props.headerIds
                     ? props.headerIds.map((id) => {
                           return (
